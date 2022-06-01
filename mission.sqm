@@ -1,0 +1,140 @@
+version=54;
+class EditorData
+{
+	moveGridStep=1;
+	angleGridStep=0.2617994;
+	scaleGridStep=1;
+	autoGroupingDist=10;
+	toggles=1;
+	mods[]=
+	{
+		"3denEnhanced"
+	};
+	class ItemIDProvider
+	{
+		nextID=32;
+	};
+	class Camera
+	{
+		pos[]={18133.979,484.23663,5121.1348};
+		dir[]={0.63450897,-0.57316655,0.51878703};
+		up[]={0.44373971,0.819399,0.36280861};
+		aside[]={0.63304222,1.5758633e-006,-0.77424926};
+	};
+};
+binarizationWanted=0;
+sourceName="Korea_Campaign_2";
+addons[]=
+{
+	"Desert"
+};
+class AddonsMetaData
+{
+	class List
+	{
+		items=1;
+		class Item0
+		{
+			className="Desert";
+			name="Desert";
+		};
+	};
+};
+randomSeed=12024929;
+class ScenarioData
+{
+	author="Ansible2";
+};
+class Mission
+{
+	class Intel
+	{
+		timeOfChanges=1800.0002;
+		startWeather=0.30000001;
+		startWind=0.1;
+		startWaves=0.1;
+		forecastWeather=0.30000001;
+		forecastWind=0.1;
+		forecastWaves=0.1;
+		forecastLightnings=0.1;
+		year=2010;
+		month=8;
+		day=5;
+		hour=10;
+		minute=0;
+		startFogDecay=0.014;
+		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=6;
+		class Item0
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={14422.238,234.914,3643.5181};
+			};
+			title="Sniper Position";
+			description="Support friendly marines attacking Brienz. (Might be beach landing)." \n "" \n "Players will also be attacked by SF inserting in helicopter behind the mountain." \n "" \n "PLayers are picked up via heli and transported to Giswell location." \n "";
+			id=24;
+			atlOffset=-0.00030517578;
+		};
+		class Item1
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={11009.14,58.516998,1972.629};
+			};
+			title="Assault by boat during morning";
+			description="Players insert via inflatable crafts. Must clear area and destroy enemy patrol boats that have been harrasing watercraft";
+			id=25;
+			atlOffset=-0.00023269653;
+		};
+		class Item2
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={16918.654,25.024,5130.1768};
+			};
+			title="Support marines attack";
+			id=28;
+			atlOffset=-5.1498413e-005;
+		};
+		class Item3
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={17363.242,111.216,5233.8052};
+			};
+			title="Kill SF Team";
+			id=29;
+			atlOffset=-0.00018310547;
+		};
+		class Item4
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={18492.738,205.939,5076.1611};
+			};
+			title="Destroy Hold out camps?";
+			id=30;
+			atlOffset=0.00032043457;
+		};
+		class Item5
+		{
+			dataType="Comment";
+			class PositionInfo
+			{
+				position[]={17042.973,109.68528,4409.4033};
+			};
+			title="Destroy Hold out camps?";
+			id=31;
+			atlOffset=0.0001373291;
+		};
+	};
+};
