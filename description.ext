@@ -1,0 +1,135 @@
+#include "Headers\descriptionEXT\descriptionEXT defines.hpp"
+
+/* ----------------------------------------------------------------------------
+	Strings (image paths and text)
+---------------------------------------------------------------------------- */
+// IF BRIEFINGNAME IS AN EMPTY STRING MISSION WILL NOT SHOW IN SELECTOR
+// Mission name displayed in the mission selection menu.
+// briefingName = "";
+
+//Text to be displayed below the overviewPicture on the mission selection screen when the mission is available to play
+// overviewText = "";
+
+// path to image that appears when in the mission select screen
+// overviewPicture = "";
+
+// Mission title during load
+// onLoadName = "";
+
+// sub text during load screen
+// onLoadMission = "";
+
+// Relative path to image that appears in load screens
+// loadScreen = "";
+
+/* ----------------------------------------------------------------------------
+	Respawns
+---------------------------------------------------------------------------- */
+/* respawn = RESPAWN_TYPE_BASE; */
+respawnOnStart = RESPAWN_ON_START_NONE;
+respawnDialog = ON;
+respawnDelay = 15;
+respawnButton = ON;
+respawn = RESPAWN_TYPE_BASE;
+respawnTemplates[] = {RESPAWN_TEMPLATE_MENU_POSITION,RESPAWN_TEMPLATE_SPECTATOR};
+/*
+respawnTemplatesWest[] = {  };
+respawnTemplatesEast[] = {  };
+respawnTemplatesGuer[] = {  };
+respawnTemplatesCiv[] = {  };
+respawnTemplatesVirtual[] = {}; // Virtual players, used mainly in Curator (Zeus) missions
+*/
+
+/* ----------------------------------------------------------------------------
+	Garbage Collector
+---------------------------------------------------------------------------- */
+corpseManagerMode = CW_MANAGER_MODE_ALL;
+corpseLimit = 15;
+corpseRemovalMinTime = 300;
+corpseRemovalMaxTime = 600;
+
+wreckManagerMode = CW_MANAGER_MODE_ALL;
+wreckLimit = 3;
+wreckRemovalMinTime = 300;
+wreckRemovalMaxTime = 600;
+// min distance from a corps or a wreck to delete
+minPlayerDistance = 50;
+
+/* ----------------------------------------------------------------------------
+	Misc
+---------------------------------------------------------------------------- */
+saving = OFF;
+disabledAI = ON;
+enableDebugConsole = ENABLE_DEBUG_CONSOLE_ADMIN_HOSTS;
+
+/* ----------------------------------------------------------------------------
+	Configs
+---------------------------------------------------------------------------- */
+class Header
+{
+	gameType = GAME_TYPE_COOP;
+	minPlayers =  	 1;
+	maxPlayers = 	 14;
+};
+
+class CfgFunctions
+{
+	#include "Headers\descriptionEXT\functions.hpp"
+	#include "KISKA Systems\KISKA Functions.hpp"
+};
+
+class CfgSounds
+{
+	#include "Headers\descriptionEXT\sounds.hpp"
+};
+
+class Params
+{
+	#include "Headers\descriptionEXT\missionParams.hpp"
+};
+
+class CfgCommunicationMenu
+{
+	#include "Headers\descriptionEXT\supports.hpp"
+};
+
+class CfgTaskDescriptions
+{
+	#include "Headers\descriptionEXT\taskDescriptions.hpp"
+};
+
+class CfgDebriefing
+{
+	/*
+	class End1
+	{
+		title = "[END]";
+		subtitle = "You Did Not Survive";
+		description = "Game Over";
+		pictureBackground = "";
+		picture = "KIA";
+		pictureColor[] = {0.6,0.1,0.2,1};
+	};
+	*/
+};
+
+
+class CfgNotifications
+{
+	/*
+	class SpecialWarning
+	{
+		title = "WARNING!!";
+		iconPicture = "A3\ui_f\data\Map\Markers\Military\warning_CA.paa";
+		description = "%1";
+		color[] = {1,0,0,1};
+		duration = 5;
+	};
+	*/
+};
+
+
+
+#include "Headers\descriptionEXT\KISKA Tasks.hpp"
+#include "Headers\descriptionEXT\KISKA Traits.hpp"
+#include "Headers\descriptionEXT\KISKA Bases.hpp"
