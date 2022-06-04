@@ -132,4 +132,4 @@ class CfgNotifications
 
 #include "Headers\descriptionEXT\KISKA Tasks.hpp"
 #include "Headers\descriptionEXT\KISKA Traits.hpp"
-#include "Headers\descriptionEXT\KISKA Bases.hpp"
+#include "Headers\descriptionEXT\KISKA Bases\KISKA Bases.hpp"
