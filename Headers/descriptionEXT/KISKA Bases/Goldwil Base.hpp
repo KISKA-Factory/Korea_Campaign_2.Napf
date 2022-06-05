@@ -24,7 +24,31 @@ class Goldwil
 
     class simples
     {
+        class gaz
+        {
+            positions = "Goldwil GAZ Markers";
+            class tigr1
+            {
+                type = "rhs_tigr_sts_msv";
+            };
+            class tigr2
+            {
+                type = "rhs_tigr_m_msv";
+            };
+        };
 
+        class trucks
+        {
+            positions = "Goldwil Truck Markers";
+            class ural
+            {
+                type = "RHS_Ural_Flat_MSV_01";
+                selections[] = {
+                    {"clan_sign",1},
+                    {"clan",1}
+                };
+            };
+        };
     };
 
     class patrols

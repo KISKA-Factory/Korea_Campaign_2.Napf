@@ -3,7 +3,7 @@
 
 class KISKA_cfgTasks
 {
-    class exampleTask_base // class name will become Task Id
+    /* class exampleTask_base // class name will become Task Id
     {
         title = "My Example Task";
         description = "This is an example";
@@ -25,8 +25,6 @@ class KISKA_cfgTasks
         priority = -1;
         notifyOnComplete = ON;
         notifyOnCreate = ON;
-
-
 
         visibleIn3D = OFF; // 3d marker creation
     };
@@ -69,5 +67,53 @@ class KISKA_cfgTasks
         notifyOnCreate = ON;
 
         visibleIn3D = OFF;
+    }; */
+
+    class KOR_goldwil
+    {
+        title = "Goldwil Small Craft Base";
+        description = "The KPN has a small craft base located in an isolated outpost on the south side of the island. <br /> The KPN has been using it as a staging point for harrassing attacks on our fleet.";
+
+        type = TASK_TYPE_ATTACK;
+
+        destination[] = {11024.9, 2014.1, 0};
+
+        priority = -1;
+        notifyOnCreate = OFF;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+    };
+
+    class KOR_goldwil_clear
+    {
+        parentTask = "KOR_goldwil";
+
+        title = "Clear Goldwil Outpost";
+        description = "Destroy remaining enemies at the outpost";
+
+        type = TASK_TYPE_KILL;
+
+        priority = 1;
+        notifyOnCreate = OFF;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+    };
+    class KOR_goldwil_destroyBoats
+    {
+        parentTask = "KOR_goldwil";
+
+        title = "Destroy Naval Assets";
+        description = "Destroy watercraft at the base";
+        type = TASK_TYPE_DESTROY;
+
+        priority = 2;
+        notifyOnCreate = OFF;
+        notifyOnComplete = ON;
+
+        destination[] = {11270.5, 1765.01, 0};
+
+        visibleIn3D = ON;
     };
 };
