@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=883;
+		nextID=885;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={11267.205,60.135803,1769.2405};
-		dir[]={0.63810945,-0.29792866,-0.71014529};
-		up[]={0.19915786,0.95455354,-0.22164458};
-		aside[]={-0.74390984,-1.9855797e-006,-0.66843486};
+		pos[]={10965.468,234.81633,1871.6959};
+		dir[]={0.422582,-0.56920832,0.70530063};
+		up[]={0.29255077,0.82219231,0.48827568};
+		aside[]={0.85782319,-4.0650775e-007,-0.51396483};
 	};
 };
 binarizationWanted=0;
@@ -567,7 +567,7 @@ class Mission
 						class Item1
 						{
 							dataType="Layer";
-							name="Goldwil  GAZ Markers";
+							name="Goldwil GAZ Markers";
 							class Entities
 							{
 								items=8;
@@ -763,7 +763,7 @@ class Mission
 									dataType="Object";
 									class PositionInfo
 									{
-										position[]={11061.976,58.575321,2020.6929};
+										position[]={11061.307,58.575321,2019.5367};
 										angles[]={-0,5.6474967,0};
 									};
 									side="Empty";
@@ -779,11 +779,11 @@ class Mission
 						};
 					};
 					id=33;
-					atlOffset=-1.4090004;
+					atlOffset=-1.4699211;
 				};
 			};
 			id=32;
-			atlOffset=-1.4090004;
+			atlOffset=-1.4699211;
 		};
 		class Item7
 		{
@@ -4148,11 +4148,11 @@ class Mission
 										};
 									};
 									id=859;
-									atlOffset=6.1974277;
+									atlOffset=6.1972275;
 								};
 							};
 							id=804;
-							atlOffset=2.1861992;
+							atlOffset=2.1861115;
 						};
 						class Item1
 						{
@@ -4164,7 +4164,7 @@ class Mission
 								class Item0
 								{
 									dataType="Layer";
-									name="Goldwil Checkpoint Turrets";
+									name="Goldwil Turrets";
 									class Entities
 									{
 										items=2;
@@ -4292,11 +4292,11 @@ class Mission
 						};
 					};
 					id=803;
-					atlOffset=1.0742855;
+					atlOffset=1.0742321;
 				};
 			};
 			id=802;
-			atlOffset=1.0742855;
+			atlOffset=1.0742321;
 		};
 		class Item153
 		{

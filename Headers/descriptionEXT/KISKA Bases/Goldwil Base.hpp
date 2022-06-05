@@ -12,15 +12,15 @@ class Goldwil
         class GoldwilTurrets
         {
             side = SIDE_OPFOR;
-            turrets = "";
+            turrets = "Goldwil Turrets";
             dynamicSim = ON;
         };
     };
 
-    class infantry
+    /* class infantry
     {
 
-    };
+    }; */
 
     class simples
     {
@@ -40,7 +40,7 @@ class Goldwil
         class trucks
         {
             positions = "Goldwil Truck Markers";
-            class ural
+            class ural_ammo
             {
                 type = "RHS_Ural_Flat_MSV_01";
                 selections[] = {
@@ -48,10 +48,13 @@ class Goldwil
                     {"clan",1}
                 };
             };
+            class ural_troop : ural_ammo
+            {
+                type = "RHS_Ural_Open_MSV_01";
+            };
         };
     };
-
-    class patrols
+    /* class patrols
     {
         class patrol_1
         {
@@ -73,5 +76,5 @@ class Goldwil
                 numberOfPoints = -1;
             };
         };
-    };
+    }; */
 };
