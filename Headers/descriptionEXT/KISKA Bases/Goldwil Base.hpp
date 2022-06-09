@@ -17,10 +17,23 @@ class Goldwil
         };
     };
 
-    /* class infantry
+    class infantry
     {
+        class GoldwilPerimeterSouth
+        {
+            numberOfUnits = -1;
+            unitsPerGroup = -1;
 
-    }; */
+            positions = "Goldwil Perimeter Spawn Markers South";
+            dynamicSim = ON;
+            canPath = ON;
+            ambientAnim = ON;
+        };
+        class GoldwilPerimeterNorth : GoldwilPerimeterSouth
+        {
+            positions = "Goldwil Perimeter Spawn Markers North";
+        };
+    };
 
     class simples
     {
