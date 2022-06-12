@@ -19,7 +19,18 @@ class Goldwil
 
     class infantry
     {
-        class GoldwilPerimeterSouth
+        class main
+        {
+            numberOfUnits = 15;
+            unitsPerGroup = -1;
+
+            positions = "Goldwil Main Exterior Spawns";
+
+            dynamicSim = ON;
+            canPath = ON;
+            ambientAnim = ON;
+        };
+        class perimeterSouth
         {
             numberOfUnits = -1;
             unitsPerGroup = -1;
@@ -29,9 +40,31 @@ class Goldwil
             canPath = ON;
             ambientAnim = ON;
         };
-        class GoldwilPerimeterNorth : GoldwilPerimeterSouth
+        class perimeterNorth : perimeterSouth
         {
             positions = "Goldwil Perimeter Spawn Markers North";
+        };
+        class boatLaunchExterior
+        {
+            numberOfUnits = 10;
+            unitsPerGroup = 5;
+            positions = "Goldwil Boat Launch Exterior Spawns";
+
+            dynamicSim = ON;
+            canPath = ON;
+        };
+        class docks_1
+        {
+            numberOfUnits = 9;
+            unitsPerGroup = 3;
+            positions = "Goldwil Boat Launch Dock Spawns 1";
+
+            dynamicSim = ON;
+            canPath = OFF;
+        };
+        class docks_2 : docks_1
+        {
+            positions = "Goldwil Boat Launch Dock Spawns 2";
         };
     };
 
