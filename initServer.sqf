@@ -8,4 +8,4 @@
     "KOR_goldwil_destroyBoats"
 ] call KISKA_fnc_setupKillTask;
 
-["Goldwil"] call KISKA_fnc_createBaseFromConfig;
+KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_createBaseFromConfig;

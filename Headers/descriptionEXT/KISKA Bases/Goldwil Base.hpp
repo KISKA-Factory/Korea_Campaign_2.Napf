@@ -19,6 +19,16 @@ class Goldwil
 
     class infantry
     {
+        class checkpoint
+        {
+            numberOfUnits = 16;
+            unitsPerGroup = 8;
+            canPath = ON;
+
+            positions = "Goldwil Checkpoint Spawns";
+            dynamicSim = ON;
+            ambientAnim = ON;
+        };
         class main
         {
             numberOfUnits = 15;
@@ -52,6 +62,10 @@ class Goldwil
 
             dynamicSim = ON;
             canPath = ON;
+        };
+        class boatLaunchInterior : boatLaunchExterior
+        {
+            positions = "Goldwil Boat Launch Ineterior Spawns";
         };
         class docks_1
         {
@@ -100,12 +114,12 @@ class Goldwil
             };
         };
     };
-    /* class patrols
+    class patrols
     {
         class patrol_1
         {
-            spawnPosition = "";
-            numberOfUnits = 5;
+            spawnPosition = "KOR_goldwil_patrolSpawn_1";
+            numberOfUnits = 7;
             dynamicSim = ON;
 
             speed = "LIMITED";
@@ -115,12 +129,20 @@ class Goldwil
 
             onGroupCreated = "";
 
-            class SpecficPatrol
+            class SpecificPatrol
             {
-                patrolPoints = "";
+                patrolPoints = "Goldwil Patrol Markers 1";
                 random = OFF;
                 numberOfPoints = -1;
             };
         };
-    }; */
+        class patrol_2 : patrol_1
+        {
+            spawnPosition = "KOR_goldwil_patrolSpawn_2";
+            class SpecificPatrol : SpecificPatrol
+            {
+                patrolPoints = "Goldwil Patrol Markers 2";
+            };
+        };
+    };
 };
