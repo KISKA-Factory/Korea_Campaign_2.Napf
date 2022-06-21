@@ -28,8 +28,17 @@ class Goldwil
             positions = "Goldwil Checkpoint Spawns";
             dynamicSim = ON;
             ambientAnim = ON;
+
+            class reinforce
+            {
+                id = "Goldwil_checkpoint";
+                canCall[] = {
+                    "Goldwil_patrolNorth",
+                    "Goldwil_perimeterNorth"
+                };
+            };
         };
-        class main
+        class mainExterior
         {
             numberOfUnits = 15;
             unitsPerGroup = -1;
@@ -39,6 +48,19 @@ class Goldwil
             dynamicSim = ON;
             canPath = ON;
             ambientAnim = ON;
+
+            class reinforce
+            {
+                id = "Goldwil_main";
+                canCall[] = {
+                    "Goldwil_checkpoint",
+                    "Goldwil_patrolNorth",
+                    "Goldwil_patrolSouth",
+                    "Goldwil_perimeterSouth",
+                    "Goldwil_perimeterNorth"
+                };
+                priority = 2;
+            };
         };
         class perimeterSouth
         {
@@ -49,10 +71,29 @@ class Goldwil
             dynamicSim = ON;
             canPath = ON;
             ambientAnim = ON;
+
+            class reinforce
+            {
+                id = "Goldwil_perimeterSouth";
+                canCall[] = {
+                    "Goldwil_main",
+                    "Goldwil_patrolSouth"
+                };
+
+            };
         };
         class perimeterNorth : perimeterSouth
         {
             positions = "Goldwil Perimeter Spawn Markers North";
+
+            class reinforce
+            {
+                id = "Goldwil_perimeterNorth";
+                canCall[] = {
+                    "Goldwil_patrolNorth",
+                    "Goldwil_checkpoint"
+                };
+            };
         };
         class boatLaunchExterior
         {
@@ -62,10 +103,33 @@ class Goldwil
 
             dynamicSim = ON;
             canPath = ON;
+
+            class reinforce
+            {
+                id = "Goldwil_boatLaunchExterior";
+                canCall[] = {
+                    "Goldwil_main",
+                    "Goldwil_patrolNorth",
+                    "Goldwil_perimeterSouth",
+                    "Goldwil_patrolSouth"
+                };
+                onEnteredCombat = "_this spawn KOR_response; true";
+                priority = 5;
+            };
         };
         class boatLaunchInterior : boatLaunchExterior
         {
             positions = "Goldwil Boat Launch Ineterior Spawns";
+            class reinforce
+            {
+                id = "Goldwil_boatLaunchInterior";
+                canCall[] = {
+                    "Goldwil_main",
+                    "Goldwil_patrolNorth",
+                    "Goldwil_perimeterSouth",
+                    "Goldwil_patrolSouth"
+                };
+            };
         };
         class docks_1
         {
@@ -114,9 +178,10 @@ class Goldwil
             };
         };
     };
+
     class patrols
     {
-        class patrol_1
+        class patrolNorth
         {
             spawnPosition = "KOR_goldwil_patrolSpawn_1";
             numberOfUnits = 7;
@@ -131,17 +196,33 @@ class Goldwil
 
             class SpecificPatrol
             {
-                patrolPoints = "Goldwil Patrol Markers 1";
+                patrolPoints = "Goldwil Patrol Markers North";
                 random = OFF;
                 numberOfPoints = -1;
             };
+
+            class reinforce
+            {
+                id = "Goldwil_patrolNorth";
+                /* canCall[] = {
+                    ""
+                }; */
+            };
         };
-        class patrol_2 : patrol_1
+        class patrolSourth : patrolNorth
         {
             spawnPosition = "KOR_goldwil_patrolSpawn_2";
             class SpecificPatrol : SpecificPatrol
             {
-                patrolPoints = "Goldwil Patrol Markers 2";
+                patrolPoints = "Goldwil Patrol Markers South";
+            };
+
+            class reinforce
+            {
+                id = "Goldwil_patrolSouth";
+                /* canCall[] = {
+                    ""
+                }; */
             };
         };
     };
