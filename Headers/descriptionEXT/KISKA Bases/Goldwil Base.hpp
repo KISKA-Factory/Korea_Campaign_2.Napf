@@ -32,6 +32,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_checkpoint";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_patrolNorth",
                     "Goldwil_perimeterNorth"
@@ -52,6 +53,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_main";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_checkpoint",
                     "Goldwil_patrolNorth",
@@ -75,6 +77,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_perimeterSouth";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_main",
                     "Goldwil_patrolSouth"
@@ -89,6 +92,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_perimeterNorth";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_patrolNorth",
                     "Goldwil_checkpoint"
@@ -123,6 +127,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_boatLaunchInterior";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_main",
                     "Goldwil_patrolNorth",
@@ -197,6 +202,7 @@ class Goldwil
             class SpecificPatrol
             {
                 patrolPoints = "Goldwil Patrol Markers North";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 random = OFF;
                 numberOfPoints = -1;
             };
@@ -204,6 +210,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_patrolNorth";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_main",
                     "Goldwil_perimeterNorth"
@@ -221,6 +228,7 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_patrolSouth";
+                onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_main",
                     "Goldwil_perimeterSouth"

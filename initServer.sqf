@@ -1,7 +1,7 @@
 KOR_response = {
     [str _this] call KISKA_fnc_log;
     params ["_group","_groupsToRespond","_priority"];
-    hint str _group;
+    /* hint str _group; */
 
     sleep 3;
 
@@ -39,6 +39,7 @@ KOR_response = {
             (_currentBehaviour != "combat")
         ) then {
             [_x,"aware"] remoteExec ["setBehaviour",_leaderOfRespondingGroup];
+            [_x,"aware"] remoteExec ["setCombatBehaviour",_leaderOfRespondingGroup];
 
         };
 
@@ -52,12 +53,13 @@ KOR_response = {
         [_groupUnits, _leaderOfRespondingGroup] remoteExec ["doFollow", _leaderOfRespondingGroup];
         [_x] remoteExec ["CBA_fnc_clearWaypoints", _leaderOfRespondingGroup];
         sleep 1;
-        [_leaderOfRespondingGroup, _moveToPosition] remoteExec ["move", _leaderOfRespondingGroup];
-        [_x, "FULL"] remoteExec ["setSpeedMode", _leaderOfRespondingGroup];
+        /* [_leaderOfRespondingGroup, _moveToPosition] remoteExec ["move", _leaderOfRespondingGroup]; */
+        [_x, _moveToPosition, 0, "MOVE", "AWARE", "YELLOW", "FULL"] call CBA_fnc_addWaypoint;
+        /* [_x, "FULL"] remoteExec ["setSpeedMode", _leaderOfRespondingGroup]; */
         _x setVariable ["KISKA_bases_respondingToId", _groupReinforceId];
     };
 
-    hint str (_leaderOfCallingGroup call BIS_fnc_enemyTargets);
+    hint str (_leaderOfCallingGroup targets [true, 300]);
 
     true
 };
