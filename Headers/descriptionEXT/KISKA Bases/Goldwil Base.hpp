@@ -204,9 +204,10 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_patrolNorth";
-                /* canCall[] = {
-                    ""
-                }; */
+                canCall[] = {
+                    "Goldwil_main",
+                    "Goldwil_perimeterNorth"
+                };
             };
         };
         class patrolSourth : patrolNorth
@@ -220,9 +221,10 @@ class Goldwil
             class reinforce
             {
                 id = "Goldwil_patrolSouth";
-                /* canCall[] = {
-                    ""
-                }; */
+                canCall[] = {
+                    "Goldwil_main",
+                    "Goldwil_perimeterSouth"
+                };
             };
         };
     };
