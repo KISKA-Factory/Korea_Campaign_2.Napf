@@ -6,7 +6,20 @@ KOR_response = {
     sleep 3;
 
     private _leaderOfCallingGroup = leader _group;
-    private _moveToPosition = getPosATL _leaderOfCallingGroup;
+    /* private _moveToPosition = getPosATL _leaderOfCallingGroup; */
+    private _targets = _leaderOfCallingGroup targets [true, dynamicSimulationDistance "Group"];
+
+    private _closestEnemy = objNull;
+    private _distanceOfClosest = -1;
+    _targets apply {
+        private _distance = _x distance _leaderOfCallingGroup;
+        if (isNull _closestEnemy OR (_distance < _distanceOfClosest)) then {
+            _distanceOfClosest = _distance;
+            _closestEnemy = _x;
+        };
+    };
+
+    private _moveToPosition = getPosATL _closestEnemy;
     private _groupRespondingToId = _group getVariable ["KISKA_bases_respondingToId",""];
     private _groupIsAlsoResponding = _groupRespondingToId isNotEqualTo "";
     private _groupReinforceId = _group getVariable ["KISKA_bases_reinforceId",""];
@@ -59,7 +72,7 @@ KOR_response = {
         _x setVariable ["KISKA_bases_respondingToId", _groupReinforceId];
     };
 
-    hint str (_leaderOfCallingGroup targets [true, 300]);
+    hint str _targets;
 
     true
 };
