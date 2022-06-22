@@ -3,7 +3,7 @@ KOR_response = {
     params ["_group","_groupsToRespond","_priority"];
     /* hint str _group; */
 
-    sleep 3;
+    /* sleep 3; */
 
     private _leaderOfCallingGroup = leader _group;
     /* private _moveToPosition = getPosATL _leaderOfCallingGroup; */
