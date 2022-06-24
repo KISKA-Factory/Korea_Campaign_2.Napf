@@ -82,7 +82,7 @@ KOR_response = {
         _x setVariable ["KISKA_bases_respondingToId", _groupReinforceId];
     };
 
-    hint "started stalking";
+    hint "fired";
 
     true
 };
@@ -210,7 +210,7 @@ private _stalkerGroupCanStalk = true;
 private _isGroupAlive = {
     params ["_group"];
     (!isNull _group) AND
-    {(_group findIf {alive _x}) isNotEqualTo -1}
+    {((units _group) findIf {alive _x}) isNotEqualTo -1}
 };
 
 while {_stalkerGroupCanStalk AND _stalkedGroupIsStalkable} do {
@@ -219,8 +219,10 @@ while {_stalkerGroupCanStalk AND _stalkedGroupIsStalkable} do {
     private _stalkerGroupLeader = leader _stalkerGroup;
     private _stalkedGroupLeader = leader _stalkedGroup;
     private _distance2DBetweenGroups = _stalkerGroupLeader distance2D _stalkedGroupLeader;
-    if (_distance2DBetweenGroups < 20) then {
-        _stalkerGroup addWaypoint [_stalkedGroupLeader, 25];
+    hint str _distance2DBetweenGroups;
+    if (_distance2DBetweenGroups > 20) then {
+        [_stalkerGroup, _stalkedGroupLeader, 25, "MOVE", "AWARE", "YELLOW", "FULL"] call CBA_fnc_addWaypoint;
+
     } else {
         [_stalkerGroup, (getPosATL _stalkedGroupLeader)] remoteExec ["move", _stalkerGroupLeader];
     };
