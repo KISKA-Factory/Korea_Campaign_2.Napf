@@ -52,7 +52,7 @@ class Goldwil
 
             class reinforce
             {
-                id = "Goldwil_main";
+                id = "Goldwil_main_exterior";
                 onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
                     "Goldwil_checkpoint",
@@ -74,9 +74,45 @@ class Goldwil
 
             class reinforce
             {
-
+                id = "Goldwil_main_interior_1";
+                onEnteredCombat = "_this spawn KOR_response; true";
+                canCall[] = {
+                    "Goldwil_main_exterior",
+                    "Goldwil_main_interior_2",
+                    "Goldwil_main_interior_3"
+                };
+                priority = -1;
             };
         };
+        class mainInterior_2 : mainInterior_1
+        {
+            positions = "Goldwil Main Interior Spawns 2";
+
+            class reinforce : reinforce
+            {
+                id = "Goldwil_main_interior_2";
+                canCall[] = {
+                    "Goldwil_main_exterior",
+                    "Goldwil_main_interior_1",
+                    "Goldwil_main_interior_3"
+                };
+            };
+        };
+        class mainInterior_3 : mainInterior_1
+        {
+            positions = "Goldwil Main Interior Spawns 3";
+
+            class reinforce : reinforce
+            {
+                id = "Goldwil_main_interior_3";
+                canCall[] = {
+                    "Goldwil_main_exterior",
+                    "Goldwil_main_interior_1",
+                    "Goldwil_main_interior_2"
+                };
+            };
+        };
+
         class perimeterSouth
         {
             numberOfUnits = -1;
@@ -92,7 +128,7 @@ class Goldwil
                 id = "Goldwil_perimeterSouth";
                 onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
-                    "Goldwil_main",
+                    "Goldwil_main_exterior",
                     "Goldwil_patrolSouth"
                 };
 
@@ -125,7 +161,6 @@ class Goldwil
             {
                 id = "Goldwil_boatLaunchExterior";
                 canCall[] = {
-                    "Goldwil_main",
                     "Goldwil_patrolNorth",
                     "Goldwil_perimeterSouth",
                     "Goldwil_patrolSouth"
@@ -142,7 +177,6 @@ class Goldwil
                 id = "Goldwil_boatLaunchInterior";
                 onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
-                    "Goldwil_main",
                     "Goldwil_patrolNorth",
                     "Goldwil_perimeterSouth",
                     "Goldwil_patrolSouth"
@@ -225,7 +259,7 @@ class Goldwil
                 id = "Goldwil_patrolNorth";
                 onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
-                    "Goldwil_main",
+                    "Goldwil_main_exterior",
                     "Goldwil_perimeterNorth"
                 };
             };
@@ -243,7 +277,7 @@ class Goldwil
                 id = "Goldwil_patrolSouth";
                 onEnteredCombat = "_this spawn KOR_response; true";
                 canCall[] = {
-                    "Goldwil_main",
+                    "Goldwil_main_exterior",
                     "Goldwil_perimeterSouth"
                 };
             };
