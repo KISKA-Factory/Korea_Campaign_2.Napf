@@ -64,6 +64,19 @@ class Goldwil
                 priority = 2;
             };
         };
+        class mainInterior_1
+        {
+            numberOfUnits = 8;
+            unitsPerGroup = -1;
+            positions = "Goldwil Main Interior Spawns 1";
+            dynamicSim = ON;
+            canPath = ON;
+
+            class reinforce
+            {
+
+            };
+        };
         class perimeterSouth
         {
             numberOfUnits = -1;

@@ -77,8 +77,14 @@ KOR_response = {
         sleep 1;
         /* [_leaderOfRespondingGroup, _moveToPosition] remoteExec ["move", _leaderOfRespondingGroup]; */
 
-        [_x, group _closestEnemy, 15, {false}, {hint str _this}] spawn KISKA_fnc_stalk;
+        [_x, group _closestEnemy, 15, {false}, {
+            params ["_stalkerGroup"];
+            hint ("reset group: " + (str _stalkedGroup));
+            _stalkerGroup setVariable ["KISKA_bases_responseMissionPriority", nil];
+            _stalkerGroup setVariable ["KISKA_bases_respondingToId", nil];
+        }] spawn KISKA_fnc_stalk;
         /* [_x, "FULL"] remoteExec ["setSpeedMode", _leaderOfRespondingGroup]; */
+        _x setVariable ["KISKA_bases_responseMissionPriority",_priority];
         _x setVariable ["KISKA_bases_respondingToId", _groupReinforceId];
     };
 
@@ -219,10 +225,8 @@ while {_stalkerGroupCanStalk AND _stalkedGroupIsStalkable} do {
     private _stalkerGroupLeader = leader _stalkerGroup;
     private _stalkedGroupLeader = leader _stalkedGroup;
     private _distance2DBetweenGroups = _stalkerGroupLeader distance2D _stalkedGroupLeader;
-    hint str _distance2DBetweenGroups;
     if (_distance2DBetweenGroups > 20) then {
         [_stalkerGroup, _stalkedGroupLeader, 25, "MOVE", "AWARE", "YELLOW", "FULL"] call CBA_fnc_addWaypoint;
-
     } else {
         [_stalkerGroup, (getPosATL _stalkedGroupLeader)] remoteExec ["move", _stalkerGroupLeader];
     };
