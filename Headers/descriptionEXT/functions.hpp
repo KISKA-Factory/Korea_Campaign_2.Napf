@@ -1,11 +1,15 @@
-/*
-class
+class KOR
 {
-	class
+	class effects
 	{
-		file = "functions\";
-		class
+		file = "functions\Effects";
+		class handle_insertToGoldwil
+		{};
+	};
+	class misc
+	{
+		file = "functions\Misc";
+		class setupClassEventHandler
 		{};
 	};
 };
-*/

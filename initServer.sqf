@@ -1,3 +1,14 @@
+KOR_testing = !(["ACE_main"] call KISKA_fnc_isPatchLoaded);
+
+[] call KOR_fnc_setupClassEventHandler;
+
+private _arsenals = ["Arsenals"] call KISKA_fnc_getMissionLayerObjects;
+[_arsenals] call KISKA_fnc_addArsenal;
+
+["medic"] call KISKA_fnc_traitManager_addToPool_global;
+["engineer"] call KISKA_fnc_traitManager_addToPool_global;
+
+
 KOR_response = {
     params ["_group","_groupsToRespond","_priority"];
 
@@ -108,3 +119,121 @@ KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 
 ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
 ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
+
+
+KISKA_fnc_slingLoad = {
+/* ----------------------------------------------------------------------------
+Function: KISKA_fnc_slingLoad
+
+Description:
+    Tells AI helicopter to pick up a given object and drop it off at a given location.
+
+Parameters:
+	0: _heli : <OBJECT> - Helicopter with pilot to perform slingload
+    1: _liftObject : <OBJECT> - The object to sling load
+    2: _dropOffPoint : <ARRAY, OBJECT, LOCATION, or GROUP> - Where to drop the _liftObject off at
+    3: _afterDropCode : <ARRAY, CODE, or STRING> - Code to execute after the drop off waypoint is complete.
+        This is saved to the pilot's group's namespace in "KISKA_postSlingLoadCode" which is deleted after
+        it is called. (See KISKA_fnc_callBack)
+            Parmeters:
+                0: <GROUP> - The group of the pilot's group
+    4: _flightPath : <ARRAY> - An array of sequential positions (<ARRAY, OBJECT, LOCATION, or GROUP>)
+        the aircraft must travel prior to droping off the _liftObject
+
+Returns:
+	<OBJECT> - The pilot of the helicopter
+
+Examples:
+    (begin example)
+		[
+
+        ] call KISKA_fnc_slingLoad;
+    (end)
+
+Author:
+	Ansible2
+---------------------------------------------------------------------------- */
+scriptName "KISKA_fnc_slingLoad";
+
+params [
+    ["_heli",objNull,[objNull]],
+    ["_liftObject",objNull,[objNull]],
+    ["_dropOffPoint",objNull,[[],objNull,grpNull,locationNull]],
+    ["_afterDropCode",{},[[],{},""]],
+    ["_flightPath",[],[[]]]
+];
+
+if !(alive _heli) exitWith {
+    ["_heli is not alive! Exiting...", true] call KISKA_fnc_log;
+    objNull
+};
+
+private _pilot = currentPilot _heli;
+if !(alive _pilot) exitWith {
+    [[_heli,"'s pilot is not alive! Exiting..."], true] call KISKA_fnc_log;
+    objNull
+};
+
+if !(alive _liftObject) exitWith {
+    ["_liftObject is dead, will not lift..."] call KISKA_fnc_log;
+    objNull
+};
+
+if !(_heli canSlingLoad _liftObject) exitWith {
+    [[_heli," can't lift ",_liftObject], true] call KISKA_fnc_log;
+    objNull
+};
+
+private _dropOffPointIsInvalid = (
+    (_dropOffPoint isEqualTypeAny [grpNull,locationNull,objNull] AND
+    {isNull _dropOffPoint}) OR
+    (_dropOffPoint isEqualTo [])
+);
+
+if (_dropOffPointIsInvalid) exitWith {
+    ["Invalid _dropOffPoint provided",true] call KISKA_fnc_log;
+    objNull
+};
+
+
+private _group = group _pilot;
+[_group] call CBA_fnc_clearWaypoints;
+
+[
+    _group,
+    _liftObject,
+    -1,
+    "Lift Cargo",
+    "SAFE",
+    "BLUE"
+] call CBA_fnc_addWaypoint;
+
+
+if (_flightPath isNotEqualTo []) then {
+    _flightPath apply {
+        [
+            _group,
+            _x,
+            -1,
+            "MOVE"
+        ] call CBA_fnc_addWaypoint;
+    };
+};
+
+
+_group setVariable ["KISKA_postSlingLoadCode",_afterDropCode];
+[
+    _group,
+    _x,
+    -1,
+    "LOAD",
+    "UNCHANGED",
+    "NO CHANGE",
+    "UNCHANGED",
+    "NO CHANGE",
+    "private _afterDropCode = this getVariable ['KISKA_postSlingLoadCode',{}]; [this._afterDropCode] call KISKA_fnc_callBack";
+] call CBA_fnc_addWaypoint;
+
+
+_pilot
+};

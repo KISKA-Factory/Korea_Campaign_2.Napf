@@ -69,6 +69,11 @@ class KISKA_cfgTasks
         visibleIn3D = OFF;
     }; */
 
+
+
+    /* ----------------------------------------------------------------------------
+        Goldwil
+    ---------------------------------------------------------------------------- */
     class KOR_goldwil
     {
         title = "Goldwil Small Craft Base";
@@ -115,5 +120,45 @@ class KISKA_cfgTasks
         destination[] = {11270.5, 1765.01, 0};
 
         visibleIn3D = ON;
+    };
+    /* ----------------------------------------------------------------------------
+        Goldwil insert
+    ---------------------------------------------------------------------------- */
+    class KOR_goldwil_insert
+    {
+        parentTask = "KOR_goldwil";
+
+        title = "Insert Into The AO";
+        description = "";
+
+        type = TASK_TYPE_MOVE;
+
+        defaultState = "AUTOASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+        destination[] = {};
+
+        priority = 100;
+    };
+    class KOR_goldwil_insert_boardTheHeli
+    {
+        parentTask = "KOR_goldwil";
+
+        title = "Board The Helicopter";
+        description = "The helicopter will transport your team and the Zodiac to near Goldwil";
+
+        type = TASK_TYPE_GET_IN;
+
+        defaultState = "ASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = ON;
+        compiledDestination = "KOR_insertHeli_goldwil";
+        priority = 100;
     };
 };
