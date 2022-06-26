@@ -119,3 +119,6 @@ KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 
 ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
 ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
+
+
+_this spawn KOR_fnc_handle_insertToGoldwil;
