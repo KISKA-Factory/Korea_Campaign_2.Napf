@@ -133,10 +133,10 @@ Parameters:
     1: _liftObject : <OBJECT> - The object to sling load
     2: _dropOffPoint : <ARRAY, OBJECT, LOCATION, or GROUP> - Where to drop the _liftObject off at
     3: _afterDropCode : <ARRAY, CODE, or STRING> - Code to execute after the drop off waypoint is complete.
-        This is saved to the pilot's group's namespace in "KISKA_postSlingLoadCode" which is deleted after
+        This is saved to the pilot's namespace in "KISKA_postSlingLoadCode" which is deleted after
         it is called. (See KISKA_fnc_callBack)
             Parmeters:
-                0: <GROUP> - The group of the pilot's group
+                0: <OBJECT> - The pilot of the helicopter
     4: _flightPath : <ARRAY> - An array of sequential positions (<ARRAY, OBJECT, LOCATION, or GROUP>)
         the aircraft must travel prior to droping off the _liftObject
 
@@ -163,6 +163,9 @@ params [
     ["_flightPath",[],[[]]]
 ];
 
+/* ----------------------------------------------------------------------------
+    Verify Params
+---------------------------------------------------------------------------- */
 if !(alive _heli) exitWith {
     ["_heli is not alive! Exiting...", true] call KISKA_fnc_log;
     objNull
@@ -195,15 +198,18 @@ if (_dropOffPointIsInvalid) exitWith {
     objNull
 };
 
-
+/* ----------------------------------------------------------------------------
+    Addwapoint
+---------------------------------------------------------------------------- */
 private _group = group _pilot;
 [_group] call CBA_fnc_clearWaypoints;
+
 
 [
     _group,
     _liftObject,
-    -1,
-    "Lift Cargo",
+    0,
+    "HOOK",
     "SAFE",
     "BLUE"
 ] call CBA_fnc_addWaypoint;
@@ -221,17 +227,17 @@ if (_flightPath isNotEqualTo []) then {
 };
 
 
-_group setVariable ["KISKA_postSlingLoadCode",_afterDropCode];
+_pilot setVariable ["KISKA_postSlingLoadCode",_afterDropCode];
 [
     _group,
-    _x,
+    _dropOffPoint,
     -1,
-    "LOAD",
+    "UNHOOK",
     "UNCHANGED",
     "NO CHANGE",
     "UNCHANGED",
     "NO CHANGE",
-    "private _afterDropCode = this getVariable ['KISKA_postSlingLoadCode',{}]; [this._afterDropCode] call KISKA_fnc_callBack";
+    "private _afterDropCode = this getVariable ['KISKA_postSlingLoadCode',{}]; [[this],_afterDropCode] call KISKA_fnc_callBack; this setVariable ['KISKA_postSlingLoadCode',nil]"
 ] call CBA_fnc_addWaypoint;
 
 
