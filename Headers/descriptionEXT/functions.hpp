@@ -5,6 +5,10 @@ class KOR
 		file = "functions\Effects";
 		class handle_insertToGoldwil
 		{};
+		class setupGoldwilBoatLaunch
+		{};
+		class cleanupBoatLaunch
+		{};
 	};
 	class misc
 	{

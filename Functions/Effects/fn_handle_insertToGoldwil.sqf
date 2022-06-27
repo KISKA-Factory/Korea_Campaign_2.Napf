@@ -1,4 +1,5 @@
 #include "..\..\Headers\Unit Classes.hpp"
+#include "..\..\Headers\Player Radius Defines.hpp"
 
 scriptName "KOR_fnc_handle_insertToGoldwil";
 
