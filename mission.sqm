@@ -12,7 +12,7 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4855;
+		nextID=4856;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={12597.478,8.1240854,450.86746};
-		dir[]={0.21045099,-0.48889205,0.84657848};
-		up[]={0.11794405,0.87234432,0.47445199};
-		aside[]={0.97046375,-7.4505806e-009,-0.24124764};
+		pos[]={10962.063,104.75424,1993.7593};
+		dir[]={0.79942805,-0.4092539,-0.43990105};
+		up[]={0.35858858,0.91239703,-0.19731931};
+		aside[]={-0.48211297,4.3975888e-007,-0.87614977};
 	};
 };
 binarizationWanted=0;
@@ -777,7 +777,7 @@ class Mission
 			name="Hidden 3D Markers";
 			class Entities
 			{
-				items=4;
+				items=5;
 				class Item0
 				{
 					dataType="Layer";
@@ -6056,9 +6056,25 @@ class Mission
 					id=4838;
 					atlOffset=92.166702;
 				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={11006.822,59.267464,1968.801};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="KOR_goldwilMarker";
+					};
+					id=4855;
+					type="Sign_Arrow_Large_Cyan_F";
+				};
 			};
 			id=32;
-			atlOffset=198.81384;
+			atlOffset=173.66553;
 		};
 		class Item7
 		{

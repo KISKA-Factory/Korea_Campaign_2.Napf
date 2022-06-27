@@ -27,7 +27,7 @@ _swccSpawns apply {
 
 waitUntil {
     sleep 5;
-    CONDITION_PLAYER_WITHIN_RADIUS_2D([11232.7,1768.89,0],900);
+    CONDITION_PLAYER_WITHIN_RADIUS_2D(KOR_goldwilMarker,900);
 };
 
 [] call KOR_fnc_cleanupBoatLaunch;
