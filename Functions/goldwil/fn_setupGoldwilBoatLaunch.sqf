@@ -1,3 +1,5 @@
+#include "..\..\Headers\Player Radius Defines.hpp"
+
 scriptName "KOR_fnc_setupGoldwilBoatLaunch";
 
 

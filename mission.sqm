@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=4860;
+		nextID=4862;
 	};
 	class LayerIndexProvider
 	{
-		nextID=1084;
+		nextID=1085;
 	};
 	class Camera
 	{
-		pos[]={11297.139,206.56354,1813.2977};
-		dir[]={-0.7062875,-0.47391966,-0.52607888};
-		up[]={-0.38011545,0.88052922,-0.28313097};
-		aside[]={-0.59741724,-1.1826705e-007,0.80204749};
+		pos[]={11041.999,78.138809,1986.3491};
+		dir[]={-0.72193789,-0.64190358,-0.25841433};
+		up[]={-0.60435265,0.76678395,-0.21632536};
+		aside[]={-0.33700827,-2.4450128e-007,0.9415071};
 	};
 };
 binarizationWanted=0;
@@ -6094,7 +6094,7 @@ class Mission
 					name="Brienz Markers";
 					class Entities
 					{
-						items=1;
+						items=2;
 						class Item0
 						{
 							dataType="Object";
@@ -6107,19 +6107,35 @@ class Mission
 							flags=4;
 							class Attributes
 							{
-								name="KOR_brienzInsert";
+								name="KOR_brienz_insertPos";
 							};
 							id=4859;
 							type="Sign_Arrow_Large_Pink_F";
 							atlOffset=0.0019836426;
 						};
+						class Item1
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={13588.092,272.85623,-452.33701};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="KOR_brienzInsertHeliSpawn";
+							};
+							id=4861;
+							type="Sign_Arrow_Large_Cyan_F";
+							atlOffset=362.10599;
+						};
 					};
 					id=4857;
-					atlOffset=0.0019836426;
+					atlOffset=284.69623;
 				};
 			};
 			id=32;
-			atlOffset=311.8009;
+			atlOffset=291.86255;
 		};
 		class Item7
 		{

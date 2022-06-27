@@ -110,12 +110,12 @@ KOR_response = {
     "KOR_goldwil_destroyBoats"
 ] call KISKA_fnc_setupKillTask;
 
-KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
+/* KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 
 [
     KOR_base_goldWil get "unit list",
     "KOR_goldwil_clear"
-] call KISKA_fnc_setupKillTask;
+] call KISKA_fnc_setupKillTask; */
 
 ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
 ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
