@@ -6,7 +6,7 @@ scriptName "KOR_fnc_handle_insertToGoldwil";
 #define NUMBER_OF_CREW 4
 
 if (!canSuspend) exitWith {
-    _this spawn KOR_fnc_handleInsert;
+    _this spawn KOR_fnc_handle_insertToGoldwil;
 };
 
 
@@ -19,7 +19,7 @@ private _heliType = [
 ] select KOR_testing;
 
 private _vehicleInfo = [
-    KOR_insertHeli_1_spawn,
+    KOR_goldwilInsertHeliSpawn,
     -1,
     _heliType,
     BLUFOR,
