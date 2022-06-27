@@ -1,5 +1,11 @@
 class KOR
 {
+	class brienz
+	{
+		file = "functions\brienz";
+		class brienzInsert
+		{};
+	};
 	class goldwil
 	{
 		file = "functions\goldwil";

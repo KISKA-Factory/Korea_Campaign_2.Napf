@@ -1,10 +1,10 @@
 #include "..\..\Headers\Unit Classes.hpp"
-scriptName "KOR_fnc_goldwilExtraction";
+scriptName "KOR_fnc_brienzInsert";
 
 #define NUMBER_OF_CREW 4
 
 if (!canSuspend) exitWith {
-    _this spawn KOR_fnc_goldwilExtraction;
+    _this spawn KOR_fnc_brienzInsert;
 };
 
 
@@ -17,7 +17,7 @@ private _heliType = [
 ] select KOR_testing;
 
 private _vehicleInfo = [
-    KOR_goldwilInsertHeliSpawn,
+    KOR_brienzInsertHeliSpawn,
     -1,
     _heliType,
     BLUFOR,
@@ -29,25 +29,31 @@ private _vehicleInfo = [
         MARINE_HELI_CREW_UNIT_CLASS
     ]
 ] call KISKA_fnc_spawnVehicle;
-KOR_insertHeli_goldwil = _vehicleInfo select 0;
+KOR_insertHeli_brienz = _vehicleInfo select 0;
 
 private _heliGroup = _vehicleInfo select 2;
 [_heliGroup,true] call KISKA_fnc_ACEX_setHCTransfer;
 _heliGroup setBehaviour "SAFE";
 _heliGroup setCombatMode "BLUE";
 
-[KOR_insertHeli_goldwil, false] remoteExec ["allowDamage", 0, true];
+[KOR_insertHeli_brienz, false] remoteExec ["allowDamage", 0, true];
 private _crew = _vehicleInfo select 1;
 _crew apply {
     [_x, false] remoteExec ["allowDamage", 0, true];
 };
 
 
+[
+    KOR_insertHeli_brienz,
+    KOR_goldwilExtractionPoint,
+    "GET IN"
+] call KISKA_fnc_heliLand;
+
 /* ----------------------------------------------------------------------------
     Task create
 ---------------------------------------------------------------------------- */
-["KOR_goldwil_insert"] call KISKA_fnc_createTaskFromConfig;
-["KOR_goldwil_insert_boardTheHeli"] call KISKA_fnc_createTaskFromConfig;
+["KOR_brienz_insert"] call KISKA_fnc_createTaskFromConfig;
+["KOR_brienz_insert_boardTheHeli"] call KISKA_fnc_createTaskFromConfig;
 
 
 /* ----------------------------------------------------------------------------
@@ -58,19 +64,19 @@ waituntil {
 	private _alivePlayers = count (call KISKA_fnc_alivePlayers);
 	(
         (_alivePlayers > 0) AND
-        {count (crew KOR_insertHeli_goldwil) isEqualTo (NUMBER_OF_CREW + _alivePlayers)}
+        {count (crew KOR_insertHeli_brienz) isEqualTo (NUMBER_OF_CREW + _alivePlayers)}
     )
 };
 
-["CCM_AM_acquaintance"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
-["KOR_goldwil_insert_boardTheHeli"] call KISKA_fnc_endTask;
+[""] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
+["KOR_brienz_insert_boardTheHeli"] call KISKA_fnc_endTask;
 
 // keep players from exiting while heli takes off
-[KOR_insertHeli_goldwil, true] remoteExecCall ["lock",KOR_insertHeli_goldwil];
+[KOR_insertHeli_brienz, true] remoteExecCall ["lock",KOR_insertHeli_goldwil];
 [] spawn {
     sleep 15;
     // let people switch seats
-    [KOR_insertHeli_goldwil, false] remoteExecCall ["lock",KOR_insertHeli_goldwil];
+    [KOR_insertHeli_brienz, false] remoteExecCall ["lock",KOR_insertHeli_goldwil];
 };
 
 
@@ -78,7 +84,7 @@ waituntil {
     Drop off players
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
-    ["KOR_goldwil_insert"] call KISKA_fnc_endTask;
+    ["KOR_brienz_insert"] call KISKA_fnc_endTask;
 
     /* ["Artillery support now available"] remoteExec ["KISKA_fnc_dataLinkMsg",0];
     ["KOR_120Guided"] call KISKA_fnc_supportManager_addToPool_global;
@@ -102,9 +108,9 @@ private _afterDropCode = {
 };
 
 [
-    KOR_insertHeli_goldwil,
-    KOR_goldwil_insertPos,
-    (fullCrew [KOR_insertHeli_goldwil,"cargo"]) apply {
+    KOR_insertHeli_brienz,
+    KOR_brienz_insertPos,
+    (fullCrew [KOR_insertHeli_brienz,"cargo"]) apply {
         _x select 0
     },
     _afterDropCode,
