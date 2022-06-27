@@ -1,8 +1,8 @@
 class KOR
 {
-	class effects
+	class goldwil
 	{
-		file = "functions\Effects";
+		file = "functions\goldwil";
 		class handle_insertToGoldwil
 		{};
 		class setupGoldwilBoatLaunch
