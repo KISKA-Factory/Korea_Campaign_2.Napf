@@ -22,7 +22,7 @@ private _vehicleInfo = [
     -1,
     _heliType,
     BLUFOR,
-    true,
+    false,
     [
         MARINE_HELI_PILOT_UNIT_CLASS,
         MARINE_HELI_PILOT_UNIT_CLASS,
@@ -69,15 +69,16 @@ waituntil {
     )
 };
 
+
 [""] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_brienz_insert_boardTheHeli"] call KISKA_fnc_endTask;
 
 // keep players from exiting while heli takes off
-[KOR_insertHeli_brienz, true] remoteExecCall ["lock",KOR_insertHeli_goldwil];
+[KOR_insertHeli_brienz, true] remoteExecCall ["lock",KOR_insertHeli_brienz];
 [] spawn {
     sleep 15;
     // let people switch seats
-    [KOR_insertHeli_brienz, false] remoteExecCall ["lock",KOR_insertHeli_goldwil];
+    [KOR_insertHeli_brienz, false] remoteExecCall ["lock",KOR_insertHeli_brienz];
 };
 
 
