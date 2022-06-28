@@ -161,4 +161,85 @@ class KISKA_cfgTasks
         compiledDestination = "KOR_insertHeli_goldwil";
         priority = 100;
     };
+
+
+    /* ----------------------------------------------------------------------------
+        Brienz
+    ---------------------------------------------------------------------------- */
+    class KOR_brienz
+    {
+        title = "Aid In Securing Brienz";
+        description = "KPA forces in Brienz are the last remnants on this southern coast. You are to provide sniper support and control CAS for Marines attacking Brienz.";
+
+        type = TASK_TYPE_ATTACK;
+
+        destination[] = {14443.6,2949.67,0};
+
+        priority = -1;
+        notifyOnCreate = OFF;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+    };
+
+    class KOR_brienz_secureCommStation
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Secure Comms Outpost";
+        description = "Remove KPA forces from the outpost. Your sniper equipment will be dropped off afterwards";
+
+        type = TASK_TYPE_KILL;
+        defaultState = "ASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        destination[] = {};
+        visibleIn3D = OFF;
+        priority = 200;
+
+        onComplete = "[] call KOR_fnc_brienz_securedOutpost";
+    };
+
+    /* ----------------------------------------------------------------------------
+        Brienz insert
+    ---------------------------------------------------------------------------- */
+    class KOR_brienz_insert
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Insert To Brienz Sniper Position";
+        description = "Brienz has a transmitter comm base overlooking it. You will air assault the position and secure it prior to the attack.";
+
+        type = TASK_TYPE_MOVE;
+
+        defaultState = "AUTOASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+        destination[] = {};
+
+        priority = 100;
+    };
+    class KOR_brienz_insert_boardTheHeli
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Board The Helicopter";
+        description = "The helicopter will transport your team and the Zodiac to near Goldwil";
+
+        type = TASK_TYPE_GET_IN;
+
+        defaultState = "ASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = ON;
+        compiledDestination = "KOR_insertHeli_brienz";
+        priority = 100;
+    };
 };

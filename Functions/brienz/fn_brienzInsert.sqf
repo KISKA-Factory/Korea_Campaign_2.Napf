@@ -87,7 +87,8 @@ waituntil {
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
     ["KOR_brienz_insert"] call KISKA_fnc_endTask;
-
+    ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
+    
     /* ["Artillery support now available"] remoteExec ["KISKA_fnc_dataLinkMsg",0];
     ["KOR_120Guided"] call KISKA_fnc_supportManager_addToPool_global;
     ["KOR_230HE"] call KISKA_fnc_supportManager_addToPool_global;
@@ -111,7 +112,7 @@ private _afterDropCode = {
 
 [
     KOR_insertHeli_brienz,
-    KOR_brienz_insertPos,
+    KOR_brienz_fastropePos,
     (fullCrew [KOR_insertHeli_brienz,"cargo"]) apply {
         _x select 0
     },
