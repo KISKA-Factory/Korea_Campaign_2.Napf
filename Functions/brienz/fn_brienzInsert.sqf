@@ -18,7 +18,7 @@ private _heliType = [
 ] select KOR_testing;
 
 private _vehicleInfo = [
-    KOR_brienzInsertHeliSpawn,
+    KOR_brienz_heliSpawn,
     -1,
     _heliType,
     BLUFOR,
@@ -88,7 +88,7 @@ waituntil {
 private _afterDropCode = {
     ["KOR_brienz_insert"] call KISKA_fnc_endTask;
     ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
-    
+
     /* ["Artillery support now available"] remoteExec ["KISKA_fnc_dataLinkMsg",0];
     ["KOR_120Guided"] call KISKA_fnc_supportManager_addToPool_global;
     ["KOR_230HE"] call KISKA_fnc_supportManager_addToPool_global;
