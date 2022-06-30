@@ -1,6 +1,6 @@
 #include "..\..\Unit Classes.hpp"
 
-class Brienz
+class BrienzOutpost
 {
     side = SIDE_OPFOR;
     infantryClasses[] = {
@@ -25,6 +25,16 @@ class Brienz
         class transmitterBuilding_3 : transmitterBuilding_1
         {
             positions = "Transmitter Building Floor 3 Spawns";
+        };
+
+        class transmitterOutside
+        {
+            postions = "Transmitter Outpost Spawns";
+            numberOfUnits = 20;
+            unitsPerGroup = 5;
+
+            canPath = ON;
+            dynamicSim = ON;
         };
     };
 };

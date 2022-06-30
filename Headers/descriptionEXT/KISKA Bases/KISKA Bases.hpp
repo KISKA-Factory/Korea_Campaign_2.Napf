@@ -42,6 +42,6 @@ class KISKA_Bases
 {
     #include "Goldwil Base.hpp"
     #include "Fleet Bases.hpp"
-    #include "Brienz Base.hpp"
+    #include "Brienz Bases.hpp"
 
 };

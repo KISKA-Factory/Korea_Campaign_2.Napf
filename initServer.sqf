@@ -104,7 +104,6 @@ KOR_response = {
 ["KOR_goldwil_clear"] call KISKA_fnc_createTaskFromConfig;
 ["KOR_goldwil_destroyBoats"] call KISKA_fnc_createTaskFromConfig;
 
-
 [
     ["Goldwil Boats"] call KISKA_fnc_getMissionLayerObjects,
     "KOR_goldwil_destroyBoats"
@@ -117,9 +116,18 @@ KOR_response = {
     "KOR_goldwil_clear"
 ] call KISKA_fnc_setupKillTask; */
 
+
+KOR_base_brienz = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
+
+[
+    KOR_base_brienzOutpost get "unit list",
+    "KOR_brienzOutpost_clear"
+] call KISKA_fnc_setupKillTask;
+
+
 ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
 ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
-["Brienz"] call KISKA_fnc_bases_createFromConfig;
+
 
 [] call KOR_fnc_setupGoldwilBoatLaunch;
 _this spawn KOR_fnc_handle_insertToGoldwil;
