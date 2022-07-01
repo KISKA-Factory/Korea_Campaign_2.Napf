@@ -29,7 +29,7 @@ class BrienzOutpost
 
         class transmitterOutside
         {
-            postions = "Transmitter Outpost Spawns";
+            positions = "Transmitter Outpost Spawns";
             numberOfUnits = 20;
             unitsPerGroup = 5;
 

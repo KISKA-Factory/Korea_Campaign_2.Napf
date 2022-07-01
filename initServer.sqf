@@ -117,12 +117,12 @@ KOR_response = {
 ] call KISKA_fnc_setupKillTask; */
 
 
-KOR_base_brienz = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
+/* KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
 
 [
     KOR_base_brienzOutpost get "unit list",
-    "KOR_brienzOutpost_clear"
-] call KISKA_fnc_setupKillTask;
+    "KOR_brienz_secureCommStation"
+] call KISKA_fnc_setupKillTask; */
 
 
 ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
