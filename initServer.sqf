@@ -125,8 +125,8 @@ KOR_response = {
 ] call KISKA_fnc_setupKillTask; */
 
 
-["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
-["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
+/* ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig; */
+/* ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig; */
 
 
 [] call KOR_fnc_setupGoldwilBoatLaunch;

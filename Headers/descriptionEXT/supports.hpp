@@ -3,17 +3,20 @@
 //import KISKA_CAS_baseClass from CfgCommunicationMenu;
 //import KISKA_attackHelicopterCAS_baseClass from CfgCommunicationMenu;
 //import KISKA_helicopterCAS_baseClass from CfgCommunicationMenu;
-//import KISKA_arsenalSupplyDrop_baseClass from CfgCommunicationMenu;
 //import KISKA_ARTY_155_templateClass from CfgCommunicationMenu;
-//import KISKA_ARTY_120_templateClass from CfgCommunicationMenu;
 //import KISKA_ARTY_82_templateClass from CfgCommunicationMenu;
 //import KISKA_ARTY_230_templateClass from CfgCommunicationMenu;
 //import KISKA_supplyDrop_aircraft_baseClass from CfgCommunicationMenu;
+import KISKA_CAS_gunsRockets_templateClass from CfgCommunicationMenu;
+import KISKA_ARTY_120_templateClass from CfgCommunicationMenu;
+import KISKA_arsenalSupplyDrop_baseClass from CfgCommunicationMenu;
 
 //#include "\KISKA_Functions\Supports\Support Framework\Headers\Support Type IDs.hpp"
 //#include "\KISKA_Functions\Supports\Support Framework\Headers\Support Icons.hpp"
 //#include "\KISKA_Functions\Supports\Support Framework\Headers\CAS Type IDs.hpp"
-//#include "\KISKA_Functions\Supports\Support Framework\Headers\Arty Ammo Type IDs.hpp"
+#if __has_include("\KISKA_Functions\Supports\Support Framework\Headers\Arty Ammo Type IDs.hpp")
+    #include "\KISKA_Functions\Supports\Support Framework\Headers\Arty Ammo Type IDs.hpp"
+#endif
 
 /*
     This master function for supports is used as go between for error cases such as when
@@ -53,3 +56,24 @@ class KISKA_basicSupport_baseClass
     managerCondition = "";
 };
 */
+
+class KOR_120HE : KISKA_ARTY_120_templateClass
+{
+    text = "120mm Shipbourne Artillery - HE";
+    roundCount = 4;
+    ammoTypes[] = {
+        AMMO_120_HE_ID
+    };
+
+    EXPRESSION_CALL_MASTER(KOR_120HE)
+};
+
+class KOR_CAS : KISKA_CAS_gunsRockets_templateClass
+{
+    vehicleTypes[] = {
+        "CUP_B_F35B_USMC",
+        "B_Plane_Fighter_01_F"
+    };
+
+    EXPRESSION_CALL_MASTER(KOR_CAS)
+};
