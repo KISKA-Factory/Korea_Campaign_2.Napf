@@ -124,6 +124,68 @@ KOR_response = {
     "KOR_brienz_secureCommStation"
 ] call KISKA_fnc_setupKillTask; */
 
+KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
+KOR_fnc_brienzMainCombat = {
+    private _playerAlreadyRevealed = missionNamespace getVariable ["KOR_brienzPlayerRevealed",false];
+    if (_playerAlreadyRevealed) exitWith {};
+
+    params ["_group"];
+
+    private _groupList = KISKA_bases_brienzMain get "group list";
+    _groupList apply {
+        _x setCombatMode "RED";
+        _x setBehaviour "AWARE";
+    };
+
+    private _foundPlayer = objNull;
+    waitUntil {
+        sleep 3;
+
+        if (missionNamespace getVariable ["KOR_brienzPlayerRevealed",false]) then {
+            breakWith true;
+        };
+
+        private _groupIsAlive = [_group] call KISKA_fnc_isGroupAlive;
+        if !(_groupIsAlive) then {
+            breakWith true;
+        };
+
+        private _simDistance = dynamicSimulationDistance "Group";
+        private _targets = [];
+        private "_leaderOfCallingGroup";
+        waitUntil {
+            sleep 1;
+            // in case leader changes
+            _leaderOfCallingGroup = leader _group;
+            if !(alive _leaderOfCallingGroup) then {
+                breakWith true;
+            };
+            _targets = _leaderOfCallingGroup targets [true, _simDistance];
+            _targets isNotEqualTo []
+        };
+
+        // in case _closestEnemy dies while processing
+        private _distanceOfClosest = -1;
+        _targets apply {
+            if (alive _x AND isPlayer _x) then {
+                _foundPlayer = _x;
+                break;
+            };
+        };
+
+
+        !(isNull _foundPlayer)
+    };
+
+
+    if (isNull _foundPlayer) exitWith {};
+    missionNamespace setVariable ["KOR_brienzPlayerRevealed",true];
+
+    _groupList apply {
+        _x reveal _foundPlayer;
+    };
+};
+
 
 /* ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig; */
 /* ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig; */

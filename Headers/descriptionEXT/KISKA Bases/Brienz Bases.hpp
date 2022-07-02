@@ -39,12 +39,46 @@ class BrienzOutpost
     };
 };
 
+class brienzMainReinforce
+{
+    id = "";
+    onEnteredCombat = "_this spawn KOR_fnc_brienzMainCombat; true";
+};
+
 class BrienzMain
 {
     side = SIDE_OPFOR;
     infantryClasses[] = {
         ENEMY_INFANTRY_UNIT_CLASSES
     };
+
+    class turrets
+    {
+        class GoldwilTurrets
+        {
+            side = SIDE_OPFOR;
+            turrets = "Brienz Main Turrets";
+            dynamicSim = ON;
+
+            class reinforce : brienzMainReinforce
+            {};
+        };
+    };
+
+
+    /* class infantry
+    {
+        class group_1
+        {
+            positions = "";
+            numberOfUnits = ;
+            unitsPerGroup = -1;
+
+            canPath = OFF;
+            dynamicSim = ON;
+
+        };
+    }; */
 
     class landVehicles
     {
@@ -69,6 +103,8 @@ class BrienzMain
                 ENEMEY_ARMOR_CREW_UNIT_CLASS,
                 ENEMEY_ARMOR_CREW_UNIT_CLASS
             };
+            class reinforce : brienzMainReinforce
+            {};
         };
 
         class apc_2 : apc_1
