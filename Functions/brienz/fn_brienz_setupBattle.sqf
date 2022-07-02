@@ -5,3 +5,4 @@ scriptName "KOR_fnc_brienz_setupBattle";
 // enemy start attacking marines
 // enemy helicopters land behind players
 // enemy helicopters land in Brienz
+// enemies that land near player need to mortar them (they can't effectively move into building)
