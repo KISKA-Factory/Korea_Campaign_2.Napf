@@ -66,19 +66,55 @@ class BrienzMain
     };
 
 
-    /* class infantry
+    class infantry
     {
         class group_1
         {
-            positions = "";
-            numberOfUnits = ;
+            positions = "Brienz Infantry Main 1";
+            numberOfUnits = 8;
             unitsPerGroup = -1;
 
             canPath = OFF;
             dynamicSim = ON;
 
+            class reinforce : brienzMainReinforce
+            {};
         };
-    }; */
+
+        class group_2 : group_1
+        {
+            positions = "Brienz Infantry Main 2";
+        };
+        class group_3 : group_1
+        {
+            positions = "Brienz Infantry Main 3";
+        };
+        class group_4 : group_1
+        {
+            positions = "Brienz Infantry Main 4";
+        };
+        class group_5 : group_1
+        {
+            positions = "Brienz Infantry Main 5";
+        };
+        class group_6 : group_1
+        {
+            positions = "Brienz Infantry Main 6";
+        };
+        class group_7 : group_1
+        {
+            positions = "Brienz Infantry Main 7";
+        };
+        class group_8 : group_1
+        {
+            positions = "Brienz Infantry Main 8";
+        };
+        class group_9 : group_1
+        {
+            positions = "Brienz Infantry Main 9";
+            canPath = ON;
+        };
+    };
 
     class landVehicles
     {
@@ -110,14 +146,17 @@ class BrienzMain
         class apc_2 : apc_1
         {
             position = "KOR_brienzMain_apc_marker_2";
+            canPath = OFF;
         };
         class apc_3 : apc_1
         {
             position = "KOR_brienzMain_apc_marker_3";
+            canPath = OFF;
         };
         class apc_4 : apc_1
         {
             position = "KOR_brienzMain_apc_marker_4";
+            canPath = OFF;
         };
         class apc_5 : apc_1
         {
