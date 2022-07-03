@@ -106,23 +106,32 @@ KOR_response = {
 
 [
     ["Goldwil Boats"] call KISKA_fnc_getMissionLayerObjects,
-    "KOR_goldwil_destroyBoats"
-] call KISKA_fnc_setupKillTask;
+    {
+        ["KOR_goldwil_destroyBoats"] call KISKA_fnc_endTask;
+    }
+] call KISKA_fnc_setupMultiKillEvent;
 
-/* KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
+KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 
 [
     KOR_base_goldWil get "unit list",
-    "KOR_goldwil_clear"
-] call KISKA_fnc_setupKillTask; */
+    {
+        ["KOR_goldwil_clear"] call KISKA_fnc_endTask;
+    },
+    1,
+    {},
+    true
+] call KISKA_fnc_setupMultiKillEvent;
 
 
 /* KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
 
 [
     KOR_base_brienzOutpost get "unit list",
-    "KOR_brienz_secureCommStation"
-] call KISKA_fnc_setupKillTask; */
+    {
+        ["KOR_brienz_secureCommStation"] call KISKA_fnc_endTask;
+    }
+] call KISKA_fnc_setupMultiKillEvent; */
 
 KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
 KOR_fnc_brienzMainCombat = {

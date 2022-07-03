@@ -30,50 +30,21 @@ private _infantryGroupMovePositions = ["Brienz Marine Infantry Move Positions"] 
 } forEach _infantryGroupSpawns;
 
 
-private _unitsToKill = +(KISKA_bases_brienzMain get "unit list");
-missionNamespace setVariable ["KOR_brienz_unitsToKill", _unitsToKill];
-_unitsToKill apply {
-    _x addEventHandler ["KILLED", {
-        if (missionNamespace getVariable ["KOR_brienz_ninetyPercentDead",false]) then {
-            private _totalUnitCount = count (missionNamespace getVariable "KOR_brienz_unitsToKill");
-            private _currentDeadCount = missionNamespace getVariable ["KOR_brienz_killedUnitCount", 0];
-            _currentDeadCount = _currentDeadCount + 1;
-            private _ninentyPercentDead = (_currentDeadCount / _totalUnitCount) >= 0.90;
-
-            if (_ninentyPercentDead) then {
-                missionNamespace setVariable ["KOR_brienz_ninetyPercentDead",true];
-                if (missionNamespace getVariable ["KOR_brienz_vehiclesKilled",false]) then {
-                    [""] call KISKA_fnc_endTask;
-                };
-
-            } else {
-                missionNamespace setVariable ["KOR_brienz_killedUnitCount", _currentDeadCount];
-
-            };
-
-        };
-    }];
-};
+private _unitsToKill = KISKA_bases_brienzMain get "unit list";
+[
+    _unitsToKill,
+    {
+        [""] call KISKA_fnc_endTask;
+    },
+    0.90
+] call KISKA_fnc_setupMultiKillEvent;
 
 
 
-private _vehiclesToKill = +(KISKA_bases_brienzMain get "land vehicles");
-missionNamespace setVariable ["KOR_brienz_totalArmorCount",count _vehiclesToKill];
-_vehiclesToKill apply {
-    _x addEventHandler ["KILLED", {
-        private _totalKilledCount = missionNamespace getVariable ["KOR_brienz_killedArmorCount",0];
-        _totalKilledCount = _totalKilledCount + 1;
-        private _totalToKill = missionNamespace getVariable ["KOR_brienz_totalArmorCount", 0];
-
-        if (_totalKilledCount isEqualTo _totalToKill) then {
-            missionNamespace setVariable ["KOR_brienz_vehiclesKilled",true];
-            if (missionNamespace getVariable ["KOR_brienz_ninetyPercentDead",true]) then {
-                [""] call KISKA_fnc_endTask;
-            };
-
-        } else {
-            missionNamespace setVariable ["KOR_brienz_killedArmorCount",_totalKilledCount];
-
-        };
-    }];
-};
+private _vehiclesToKill = KISKA_bases_brienzMain get "land vehicles";
+private _armorKillEventMap = [
+    _vehiclesToKill,
+    {
+        [""] call KISKA_fnc_endTask;
+    }
+] call KISKA_fnc_setupMultiKillEvent;
