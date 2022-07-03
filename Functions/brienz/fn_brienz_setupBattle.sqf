@@ -31,10 +31,13 @@ private _infantryGroupMovePositions = ["Brienz Marine Infantry Move Positions"] 
 
 
 private _unitsToKill = KISKA_bases_brienzMain get "unit list";
-[
+KISKA_multiKillEventMap_brienzInfantry = [
     _unitsToKill,
     {
-        [""] call KISKA_fnc_endTask;
+        private _armorKilled = KISKA_multiKillEventMap_brienzArmor getOrDefault ["thresholdMet",false]
+        if (_armorKilled) then {
+            [""] call KISKA_fnc_endTask;
+        };
     },
     0.90
 ] call KISKA_fnc_setupMultiKillEvent;
@@ -42,9 +45,12 @@ private _unitsToKill = KISKA_bases_brienzMain get "unit list";
 
 
 private _vehiclesToKill = KISKA_bases_brienzMain get "land vehicles";
-private _armorKillEventMap = [
+KISKA_multiKillEventMap_brienzArmor = [
     _vehiclesToKill,
     {
-        [""] call KISKA_fnc_endTask;
+        private _infantryKilled = KISKA_multiKillEventMap_brienzInfantry getOrDefault ["thresholdMet",false]
+        if (_infantryKilled) then {
+            [""] call KISKA_fnc_endTask;
+        };
     }
 ] call KISKA_fnc_setupMultiKillEvent;
