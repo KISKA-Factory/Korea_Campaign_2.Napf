@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=7203;
+		nextID=7221;
 	};
 	class LayerIndexProvider
 	{
-		nextID=2073;
+		nextID=2075;
 	};
 	class Camera
 	{
-		pos[]={14656.742,59.396847,2976.6169};
-		dir[]={-0.80094069,-0.49699166,-0.33401757};
-		up[]={-0.45871407,0.86773521,-0.19129798};
-		aside[]={-0.38491905,6.6298526e-008,0.92298764};
+		pos[]={14576.64,102.10634,2795.3281};
+		dir[]={-0.59481812,-0.34807813,0.72476256};
+		up[]={-0.22089887,0.93739223,0.26915976};
+		aside[]={0.77310723,-3.9901352e-008,0.63450181};
 	};
 };
 binarizationWanted=0;
@@ -161,14 +161,13 @@ addons[]=
 	"CUP_Weapons_M107",
 	"CUP_Weapons_Ammunition",
 	"rhsusf_c_markvsoc",
-	"CUP_WheeledVehicles_LAV25",
-	"CUP_TrackedVehicles_AAV"
+	"CUP_WheeledVehicles_LAV25"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=69;
+		items=68;
 		class Item0
 		{
 			className="Desert";
@@ -593,11 +592,6 @@ class AddonsMetaData
 		{
 			className="CUP_WheeledVehicles_LAV25";
 			name="CUP_WheeledVehicles_LAV25";
-		};
-		class Item68
-		{
-			className="CUP_TrackedVehicles_AAV";
-			name="CUP_TrackedVehicles_AAV";
 		};
 	};
 };
@@ -7842,7 +7836,7 @@ class Mission
 							name="Main";
 							class Entities
 							{
-								items=15;
+								items=12;
 								class Item0
 								{
 									dataType="Layer";
@@ -9722,101 +9716,154 @@ class Mission
 								};
 								class Item10
 								{
-									dataType="Object";
-									class PositionInfo
+									dataType="Layer";
+									name="Brienz Hidden Group Spawns";
+									class Entities
 									{
-										position[]={14453.15,9.5410013,2956.1299};
-										angles[]={0.0089884456,0,6.2791882};
+										items=5;
+										class Item0
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14453.15,9.5410013,2956.1299};
+												angles[]={0.0089884456,0,6.2791882};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+												name="KOR_brienz_hiddenGroupSpawn_1";
+											};
+											id=7194;
+											type="Sign_Arrow_Large_F";
+										};
+										class Item1
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14503.301,8.1599617,2837.782};
+												angles[]={6.2701883,0,0};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+												name="KOR_brienz_hiddenGroupSpawn_2";
+											};
+											id=7195;
+											type="Sign_Arrow_Large_F";
+										};
+										class Item2
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14466.81,10.169329,2930.0847};
+												angles[]={0.011995304,0,0};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+												name="KOR_brienz_hiddenGroupSpawn_3";
+											};
+											id=7196;
+											type="Sign_Arrow_Large_F";
+										};
+										class Item3
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14461.604,10.672738,2873.5608};
+												angles[]={6.2813916,0,0.0012448779};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+												name="KOR_brienz_hiddenGroupSpawn_4";
+											};
+											id=7197;
+											type="Sign_Arrow_Large_F";
+										};
+										class Item4
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14491.487,10.869929,2973.426};
+												angles[]={0.0089884456,0,6.2791882};
+											};
+											side="Empty";
+											class Attributes
+											{
+												name="KOR_brienz_hiddenGroupSpawn_5";
+											};
+											id=7198;
+											type="Sign_Arrow_Large_F";
+											atlOffset=1.3297625;
+										};
 									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="KOR_brienz_hiddenGroupSpawn_1";
-									};
-									id=7194;
-									type="Sign_Arrow_Large_F";
+									id=7217;
+									atlOffset=0.85107422;
 								};
 								class Item11
 								{
-									dataType="Object";
-									class PositionInfo
+									dataType="Layer";
+									name="Brienz LAV Drop Offs";
+									class Entities
 									{
-										position[]={14503.442,8.1675663,2838.3667};
-										angles[]={0.0089884456,0,6.2791882};
+										items=2;
+										class Item0
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14840.301,12.949773,3012.4229};
+												angles[]={6.2083273,0,0.030990755};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7218;
+											type="Sign_Arrow_Large_Green_F";
+										};
+										class Item1
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={14834.412,12.213925,2978.8513};
+												angles[]={0.035984326,0,0.018996246};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7220;
+											type="Sign_Arrow_Large_Green_F";
+										};
 									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="KOR_brienz_hiddenGroupSpawn_2";
-									};
-									id=7195;
-									type="Sign_Arrow_Large_F";
-									atlOffset=3.8146973e-006;
-								};
-								class Item12
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={14466.81,10.169329,2930.0847};
-										angles[]={0.011995304,0,0};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="KOR_brienz_hiddenGroupSpawn_3";
-									};
-									id=7196;
-									type="Sign_Arrow_Large_F";
-								};
-								class Item13
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={14461.604,10.672738,2873.5608};
-										angles[]={6.2813916,0,0.0012448779};
-									};
-									side="Empty";
-									flags=4;
-									class Attributes
-									{
-										name="KOR_brienz_hiddenGroupSpawn_4";
-									};
-									id=7197;
-									type="Sign_Arrow_Large_F";
-								};
-								class Item14
-								{
-									dataType="Object";
-									class PositionInfo
-									{
-										position[]={14491.487,10.869929,2973.426};
-										angles[]={0.0089884456,0,6.2791882};
-									};
-									side="Empty";
-									class Attributes
-									{
-										name="KOR_brienz_hiddenGroupSpawn_5";
-									};
-									id=7198;
-									type="Sign_Arrow_Large_F";
-									atlOffset=1.3297625;
+									id=7219;
+									atlOffset=0.28836346;
 								};
 							};
 							id=7091;
-							atlOffset=0.94118786;
+							atlOffset=1.0438938;
 						};
 					};
 					id=4857;
-					atlOffset=126.4569;
+					atlOffset=126.38988;
 				};
 			};
 			id=32;
-			atlOffset=261.85364;
+			atlOffset=262.20724;
 		};
 		class Item7
 		{
@@ -36863,8 +36910,8 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14902.48,15.814898,3005.4968};
-				angles[]={6.2811723,4.5497422,0.018996246};
+				position[]={15304.517,26.115723,2820.6592};
+				angles[]={-0,5.2503424,0};
 			};
 			side="Empty";
 			flags=4;
@@ -36873,15 +36920,14 @@ class Mission
 			};
 			id=6997;
 			type="CUP_B_LAV25_USMC";
-			atlOffset=-8.2969666e-005;
 		};
 		class Item42
 		{
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={14902.911,15.889639,3000.9048};
-				angles[]={6.2811723,4.6658344,0.018996246};
+				position[]={15316.312,26.191582,2815.3782};
+				angles[]={-0,5.1468682,0};
 			};
 			side="Empty";
 			flags=4;
@@ -36890,24 +36936,17 @@ class Mission
 			};
 			id=6999;
 			type="CUP_B_LAV25M240_USMC";
-			atlOffset=-0.0001115799;
+			atlOffset=0.00011634827;
 		};
 		class Item43
 		{
-			dataType="Object";
-			class PositionInfo
-			{
-				position[]={14895.499,15.478969,2998.0403};
-				angles[]={6.2801757,4.5605412,0.02199479};
-			};
-			side="Empty";
-			flags=4;
+			dataType="Group";
+			side="West";
 			class Attributes
 			{
 			};
-			id=7001;
-			type="CUP_B_AAV_USMC";
-			atlOffset=-0.00022983551;
+			id=7203;
+			atlOffset=90;
 		};
 	};
 };
