@@ -131,7 +131,7 @@ KOR_response = {
     }
 ] call KISKA_fnc_setupMultiKillEvent; */
 
-KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
+/* KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig; */
 KOR_fnc_brienzMainCombat = {
     private _playerAlreadyRevealed = missionNamespace getVariable ["KOR_brienzPlayerRevealed",false];
     if (_playerAlreadyRevealed) exitWith {};
@@ -203,9 +203,8 @@ _this spawn KOR_fnc_handle_insertToGoldwil;
 
 
 
-// extraction from brienz
-// music
 // cover at goldwil beach
-// supports
 // how to give players the arsenal at brienz
 // figure out better strategy for group changer and player groups being added
+// supports
+// music

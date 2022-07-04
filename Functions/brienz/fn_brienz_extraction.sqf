@@ -1,9 +1,10 @@
 #include "..\..\Headers\Unit Classes.hpp"
-scriptName "KOR_brienz_extraction";
+scriptName "KOR_fnc_brienz_extraction";
 
+#define NUMBER_OF_CREW 4
 
 if (!canSuspend) exitWith {
-    _this spawn KOR_brienz_extraction;
+    _this spawn KOR_fnc_brienz_extraction;
 };
 
 
@@ -85,7 +86,7 @@ waituntil {
 };
 
 private _pilot = currentPilot _heli;
-_pilot doMove KOR_goldwilInsertHeliSpawn;
+[[_pilot],(getPosATL KOR_goldwilInsertHeliSpawn)] remoteExec ["doMove",_pilot];
 
 [] spawn {
     sleep 60;
