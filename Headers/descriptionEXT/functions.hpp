@@ -5,6 +5,10 @@ class KOR
 		file = "functions\brienz";
 		class brienzInsert
 		{};
+		class brienz_airAssault
+		{};
+		class brienz_reinforcements
+		{};
 		class brienz_setupBattle
 		{};
 	};

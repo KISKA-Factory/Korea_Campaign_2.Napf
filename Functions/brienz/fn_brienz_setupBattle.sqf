@@ -10,7 +10,7 @@ private _infantryGroupMovePositions = ["Brienz Marine Infantry Move Positions"] 
 
 {
     private _infantryGroup = [
-        8,
+        6,
         [MARINE_INFANTRY_UNIT_CLASSES],
         BLUFOR,
         _x,
@@ -82,11 +82,11 @@ KISKA_multiKillEventMap_brienzInfantry = [
         private _total = _eventMap getOrDefault ["total", 1];
         private _killed = _eventMap getOrDefault ["killed", 1];
         private _percentageKilled = _killed / _total;
-        if (_percentageKilled >= 0.25) then {
-            [] call KOR_fnc_brienz_reinforcements;
-        };
         if (_percentageKilled >= 0.45) then {
             [] call KOR_fnc_brienz_reinforcements;
+        };
+        if (_percentageKilled >= 0.7) then {
+            [] call KOR_fnc_brienz_airAssault;
         };
     }
 ] call KISKA_fnc_setupMultiKillEvent;
