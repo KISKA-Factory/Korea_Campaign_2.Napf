@@ -53,6 +53,8 @@
     "O_T_Soldier_F",\
     "O_T_Soldier_AAR_F"
 
+#define KOREAN_LIGHT_HELI_CLASS "O_Heli_Light_02_unarmed_F"
+
 #define MARINE_HELI_PILOT_UNIT_CLASS "rhsusf_usmc_marpat_wd_helipilot"
 #define MARINE_HELI_CREW_UNIT_CLASS "rhsusf_usmc_marpat_wd_helicrew"
 #define MARINE_INFANTRY_UNIT_CLASSES \

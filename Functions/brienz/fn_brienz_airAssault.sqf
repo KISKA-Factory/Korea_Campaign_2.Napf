@@ -6,31 +6,101 @@ hint "air assault";
 
 missionNamespace setVariable ["KOR_brienz_airAssaultCalled",true];
 
-// spawn heli
-// spawn group
-// add group to kill event
-// put group in back of heli
-// tell heli to land
-// kick out group
-// tell group to attack (or tell to stalk players)
-// have heli move to be deleted
 
-private _spawnPositions = ["Brienz Hidden Group Spawns"] call KISKA_fnc_getMissionlayerObjects;
-for "_i" from 0 to 2 do {
+private _spawnPositions = ["Brienz "] call KISKA_fnc_getMissionlayerObjects;
+private _landingPositions = ["Brienz "] call KISKA_fnc_getMissionlayerObjects;
+{
+
+    private _heliInfo = [
+        _x,
+        -1,
+        KOREAN_LIGHT_HELI_CLASS,
+        OPFOR,
+        true,
+        [ENEMEY_HELI_PILOT_UNIT_CLASS]
+    ] call KISKA_fnc_spawnVehicle;
+
     private _group = [
         6,
         [ ENEMY_INFANTRY_UNIT_CLASSES ],
         OPFOR,
-        selectRandom _spawnPositions
+        _x
     ] call KISKA_fnc_spawnGroup;
 
+    private _infantryUnits = units _group;
     [
-        (units _group),
+        _infantryUnits,
         "#" + (KISKA_multiKillEventMap_brienzInfantry get "id")
     ] call KISKA_fnc_setupMultiKillEvent;
 
-    [_group, [14609.6,2950.91,0], 25] call KISKA_fnc_attack;
-};
+    private _heli = _heliInfo select 0;
+    _infantryUnits apply {
+        _x moveInCargo _heli;
+    };
+
+
+    private _stalkingPlayers = _forEachIndex >= 2;
+    [
+        _heli,
+        _landingPositions select _forEachIndex,
+        "GET OUT",
+        true,
+        [[_group, _infantryUnits, _stalkingPlayers],{
+            _this spawn {
+                params ["_heli"];
+
+                private _pilot = currentPilot _heli;
+                waitUntil {
+                    if (!(alive _heli) OR !(alive _pilot)) exitWith {
+                        _heli setDamage 1;
+                        true
+                    };
+
+                    if (count (crew _heli) isEqualTo 1) exitWith {
+                        [[_pilot],(getPosATL KOR_deletePos_enemy)] remoteExec ["doMove",_pilot];  //// NEED TO MAKE KOR_deletePos_enemy
+
+                        waitUntil {
+                            sleep 2;
+                            _heli distance2D KOR_deletePos_enemy <= 400;
+                        };
+
+                        deleteVehicleCrew _heli;
+                        deleteVehicle _heli;
+                        true
+                    };
+
+                    sleep 2;
+                    false
+                };
+
+            };
+
+
+            _thisArgs params ["_infantryGroup", "_infantryUnits"];
+            _infantryUnits apply {
+                moveOut _x;
+            };
+
+            if (_stalkingPlayers) then {
+                [_infantryGroup, [14609.6,2950.91,0], 25] call KISKA_fnc_attack;
+
+            } else {
+                private _nearestPlayer = objNull;
+                private _nearestDistance = -1;
+                private _infantryLeader = leader _infantryGroup;
+                (call CBA_fnc_players) apply {
+                    private _distance = _x distance _infantryLeader;
+                    if ((_nearestDistance isEqualTo -1) OR (_distance < _nearestDistance)) then {
+                        _nearestPlayer = _x;
+                        _nearestDistance = _distance;
+                    };
+                };
+                [_infantryGroup, _nearestPlayer] call KISKA_fnc_stalk;
+
+            };
+        }]
+    ] call KISKA_fnc_heliLand;
+} forEach _spawnPositions;
 
 
 nil

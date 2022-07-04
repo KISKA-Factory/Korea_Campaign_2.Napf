@@ -5,14 +5,14 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=521;
+	toggles=1545;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=7263;
+		nextID=7270;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={14428.438,184.44627,3128.3513};
-		dir[]={0.36069295,-0.80402154,-0.47287026};
-		up[]={0.48762143,0.5945977,-0.63927287};
-		aside[]={-0.79516006,7.4214768e-009,-0.60653007};
+		pos[]={14526.095,442.97125,4175.8677};
+		dir[]={-0.79131341,-0.34116161,0.50754684};
+		up[]={-0.28717172,0.94002044,0.18419151};
+		aside[]={0.53994292,1.2299279e-006,0.84181452};
 	};
 };
 binarizationWanted=0;
@@ -9810,7 +9810,7 @@ class Mission
 								};
 							};
 							id=7091;
-							atlOffset=-346.89691;
+							atlOffset=1.8992805;
 						};
 						class Item4
 						{
@@ -10071,11 +10071,11 @@ class Mission
 						};
 					};
 					id=4857;
-					atlOffset=164.10046;
+					atlOffset=67.190369;
 				};
 			};
 			id=32;
-			atlOffset=232.18976;
+			atlOffset=232.85413;
 		};
 		class Item7
 		{
@@ -36368,26 +36368,26 @@ class Mission
 		class Item23
 		{
 			dataType="Marker";
-			position[]={14455.011,8.3395996,2986.8826};
+			position[]={14553.655,9.3063669,2957.8916};
 			name="marker_17";
 			markerType="ELLIPSE";
 			type="";
 			colorName="ColorEAST";
-			a=94.633392;
-			b=549.45862;
-			angle=270.24173;
+			a=178.08517;
+			b=177.87469;
+			angle=173.70743;
 			id=4559;
-			atlOffset=-0.50603294;
+			atlOffset=0.49217892;
 		};
 		class Item24
 		{
 			dataType="Marker";
-			position[]={14435.094,28.307373,3130.2041};
+			position[]={14716.101,26.183533,3120.2566};
 			name="marker_21";
-			text="Motorized Response Force";
+			text="Mechanized Infantry";
 			type="o_motor_inf";
 			id=4563;
-			atlOffset=-1.0927391;
+			atlOffset=-4.5776367e-005;
 		};
 		class Item25
 		{
