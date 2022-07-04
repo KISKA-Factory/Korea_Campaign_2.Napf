@@ -21,3 +21,6 @@ for "_i" from 0 to 2 do {
 
     [_group, [14609.6,2950.91,0], 25] call KISKA_fnc_attack;
 };
+
+
+nil
