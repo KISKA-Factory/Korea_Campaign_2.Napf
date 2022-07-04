@@ -199,7 +199,7 @@ class KISKA_cfgTasks
         visibleIn3D = OFF;
         priority = 200;
 
-        onComplete = "[] call KOR_fnc_brienz_securedOutpost";
+        onComplete = "[] spawn KOR_fnc_brienz_securedOutpost";
     };
     class KOR_brienz_supportMarines
     {

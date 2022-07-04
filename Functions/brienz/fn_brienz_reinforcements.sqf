@@ -2,6 +2,8 @@
 
 scriptName "KOR_fnc_brienz_reinforcements";
 
+missionNamespace setVariable ["KOR_brienz_reinforcementsCalled",true];
+
 private _spawnPositions = ["Brienz Hidden Group Spawns"] call KISKA_fnc_getMissionlayerObjects;
 
 for "_i" from 0 to 2 do {

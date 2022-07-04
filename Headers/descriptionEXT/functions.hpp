@@ -11,6 +11,8 @@ class KOR
 		{};
 		class brienz_setupBattle
 		{};
+		class brienz_securedOutpost
+		{};
 	};
 	class goldwil
 	{

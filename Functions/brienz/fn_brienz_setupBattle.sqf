@@ -82,10 +82,14 @@ KISKA_multiKillEventMap_brienzInfantry = [
         private _total = _eventMap getOrDefault ["total", 1];
         private _killed = _eventMap getOrDefault ["killed", 1];
         private _percentageKilled = _killed / _total;
-        if (_percentageKilled >= 0.45) then {
+        
+        private _reinforceMentsCalled = missionNamespace getVariable ["KOR_brienz_reinforcementsCalled",false];
+        if (_percentageKilled >= 0.45 AND (!_reinforceMentsCalled)) then {
             [] call KOR_fnc_brienz_reinforcements;
         };
-        if (_percentageKilled >= 0.7) then {
+
+        private _airAssaultCalled = missionNamespace getVariable ["KOR_brienz_airAssaultCalled",false];
+        if (_percentageKilled >= 0.7 AND (!_airAssaultCalled)) then {
             [] call KOR_fnc_brienz_airAssault;
         };
     }

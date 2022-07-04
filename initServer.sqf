@@ -111,8 +111,7 @@ KOR_response = {
     }
 ] call KISKA_fnc_setupMultiKillEvent;
 
-KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
-
+/* KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 [
     KOR_base_goldWil get "unit list",
     {
@@ -121,11 +120,10 @@ KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
     1,
     {},
     true
-] call KISKA_fnc_setupMultiKillEvent;
+] call KISKA_fnc_setupMultiKillEvent; */
 
 
 /* KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
-
 [
     KOR_base_brienzOutpost get "unit list",
     {
