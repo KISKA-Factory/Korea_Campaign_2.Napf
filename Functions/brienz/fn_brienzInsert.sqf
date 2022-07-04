@@ -70,6 +70,10 @@ waituntil {
     )
 };
 
+(call CBA_fnc_players) apply {
+    [_x, true] remoteExecCall ["setCaptive",_x];
+    [_x, false] remoteExecCall ["allowDamage",_x];
+};
 
 [""] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_brienz_insert_boardTheHeli"] call KISKA_fnc_endTask;
@@ -87,6 +91,11 @@ waituntil {
     Drop off players
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
+    (call CBA_fnc_players) apply {
+        [_x, false] remoteExecCall ["setCaptive",_x];
+        [_x, true] remoteExecCall ["allowDamage",_x];
+    };
+
     ["KOR_brienz_insert"] call KISKA_fnc_endTask;
     ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
 
