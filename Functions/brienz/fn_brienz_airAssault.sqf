@@ -2,8 +2,6 @@
 
 scriptName "KOR_fnc_brienz_airAssault";
 
-hint "air assault";
-
 missionNamespace setVariable ["KOR_brienz_airAssaultCalled",true];
 
 

@@ -7,6 +7,8 @@ class KOR
 		{};
 		class brienz_airAssault
 		{};
+		class brienz_dropOffArsenal
+		{};
 		class brienz_extraction
 		{};
 		class brienz_reinforcements

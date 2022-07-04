@@ -12,18 +12,18 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=7288;
+		nextID=7306;
 	};
 	class LayerIndexProvider
 	{
-		nextID=2609;
+		nextID=2610;
 	};
 	class Camera
 	{
-		pos[]={14390.206,266.18713,3620.3242};
-		dir[]={0.54530698,-0.74614471,0.38197953};
-		up[]={0.61112612,0.66578376,0.42808491};
-		aside[]={0.57372904,1.4901161e-008,-0.81904507};
+		pos[]={15715.634,396.7673,4294.8062};
+		dir[]={-0.81354678,-0.27199456,-0.51419252};
+		up[]={-0.22996071,0.96227366,-0.14534426};
+		aside[]={-0.53433865,1.1262018e-006,0.84541911};
 	};
 };
 binarizationWanted=0;
@@ -111,6 +111,8 @@ addons[]=
 	"A3_Props_F_Enoch_Military_Garbage",
 	"LSR_contact_in_cup_aesthetics_c",
 	"A3_Props_F_Enoch_Military_Camps",
+	"A3_Rocks_F_Sharp",
+	"A3_Rocks_F",
 	"CUP_Creatures_StaticWeapons",
 	"A3_Boat_F_Exp_Boat_Armed_01",
 	"A3_Modules_F",
@@ -158,15 +160,16 @@ addons[]=
 	"A3_Structures_F_Mil_Helipads",
 	"A3_Characters_F_Common",
 	"A3_Ui_F",
-	"CUP_Weapons_M107",
+	"CUP_Weapons_G36",
 	"CUP_Weapons_Ammunition",
-	"rhsusf_c_markvsoc"
+	"rhsusf_c_markvsoc",
+	"A3_Boat_F_Beta_SDV_01"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=67;
+		items=69;
 		class Item0
 		{
 			className="Desert";
@@ -453,139 +456,153 @@ class AddonsMetaData
 		};
 		class Item45
 		{
+			className="A3_Rocks_F";
+			name="Arma 3 - Rocks and Stones";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item46
+		{
 			className="CUP_Creatures_StaticWeapons";
 			name="CUP_Creatures_StaticWeapons";
 		};
-		class Item46
+		class Item47
 		{
 			className="A3_Boat_F_Exp";
 			name="Arma 3 Apex - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item47
+		class Item48
 		{
 			className="A3_Modules_F";
 			name="Arma 3 Alpha - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item48
+		class Item49
 		{
 			className="A3_Static_F_Jets";
 			name="Arma 3 Jets - Turrets";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item49
+		class Item50
 		{
 			className="A3_Static_F_Destroyer";
 			name="CFGPATCHES_A3_Static_F_Destroyer";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item50
+		class Item51
 		{
 			className="A3_Boat_F";
 			name="Arma 3 Alpha - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item51
+		class Item52
 		{
 			className="A3_Characters_F_Enoch";
 			name="Arma 3 Contact Platform - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item52
+		class Item53
 		{
 			className="A3_Characters_F_Orange";
 			name="Arma 3 Orange - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item53
+		class Item54
 		{
 			className="A3_Boat_F_Destroyer";
 			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item54
+		class Item55
 		{
 			className="A3_Boat_F_Jets";
 			name="Arma 3 Jets - Boats and Submersibles";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item55
+		class Item56
 		{
 			className="A3_Air_F_Exp";
 			name="Arma 3 Apex - Aircraft";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item56
+		class Item57
 		{
 			className="CUP_WaterVehicles_Type072";
 			name="CUP_WaterVehicles_Type072";
 		};
-		class Item57
+		class Item58
 		{
 			className="CUP_WaterVehicles_Fregata";
 			name="CUP_WaterVehicles_Fregata";
 		};
-		class Item58
+		class Item59
 		{
 			className="CUP_WaterVehicles_LPD";
 			name="CUP_WaterVehicles_LPD";
 		};
-		class Item59
+		class Item60
 		{
 			className="CUP_WaterVehicles_LHD";
 			name="CUP_WaterVehicles_LHD";
 		};
-		class Item60
+		class Item61
 		{
 			className="A3_Characters_F_Exp";
 			name="Arma 3 Apex - Characters and Clothing";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item61
+		class Item62
 		{
 			className="CUP_CABuildings2_Misc_Cargo";
 			name="CUP_CABuildings2_Misc_Cargo";
 		};
-		class Item62
+		class Item63
 		{
 			className="CUP_Vysilac_DBE1";
 			name="CUP_Vysilac_DBE1";
 		};
-		class Item63
+		class Item64
 		{
 			className="A3_Ui_F";
 			name="Arma 3 - User Interface";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item64
-		{
-			className="CUP_Weapons_M107";
-			name="CUP_Weapons_M107";
-		};
 		class Item65
+		{
+			className="CUP_Weapons_G36";
+			name="CUP_Weapons_G36";
+		};
+		class Item66
 		{
 			className="CUP_Weapons_Ammunition";
 			name="CUP_Weapons_Ammunition";
 		};
-		class Item66
+		class Item67
 		{
 			className="rhsusf_c_markvsoc";
 			name="Mark V SOC";
 			author="Red Hammer Studios";
 			url="http://www.rhsmods.org/";
+		};
+		class Item68
+		{
+			className="A3_Boat_F_Beta";
+			name="Arma 3 Beta - Boats and Submersibles";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -740,7 +757,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=41;
+		items=42;
 		class Item0
 		{
 			dataType="Comment";
@@ -814,7 +831,7 @@ class Mission
 			name="Hidden 3D Markers";
 			class Entities
 			{
-				items=5;
+				items=6;
 				class Item0
 				{
 					dataType="Layer";
@@ -6133,7 +6150,7 @@ class Mission
 					name="Brienz Markers";
 					class Entities
 					{
-						items=6;
+						items=7;
 						class Item0
 						{
 							dataType="Object";
@@ -10267,9 +10284,26 @@ class Mission
 							id=7271;
 							atlOffset=80.862732;
 						};
+						class Item6
+						{
+							dataType="Object";
+							class PositionInfo
+							{
+								position[]={15810.193,261.74554,4356.395};
+								angles[]={0,4.228549,0};
+							};
+							side="Empty";
+							class Attributes
+							{
+								name="KOR_brienz_arsenalHeliSpawn";
+							};
+							id=7303;
+							type="Sign_Arrow_Direction_Pink_F";
+							atlOffset=18.175995;
+						};
 					};
 					id=4857;
-					atlOffset=162.82344;
+					atlOffset=-20.690613;
 				};
 				class Item4
 				{
@@ -10288,9 +10322,25 @@ class Mission
 					type="Sign_Arrow_Large_Pink_F";
 					atlOffset=470.69427;
 				};
+				class Item5
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={18106.014,341.72534,4418.6128};
+					};
+					side="Empty";
+					class Attributes
+					{
+						name="KOR_deletePos_2";
+					};
+					id=7305;
+					type="Sign_Arrow_Large_F";
+					atlOffset=114.86603;
+				};
 			};
 			id=32;
-			atlOffset=431.48563;
+			atlOffset=196.47205;
 		};
 		class Item7
 		{
@@ -10379,7 +10429,7 @@ class Mission
 							name="Statics";
 							class Entities
 							{
-								items=4;
+								items=5;
 								class Item0
 								{
 									dataType="Layer";
@@ -26706,9 +26756,207 @@ class Mission
 									id=1316;
 									atlOffset=-4.47118;
 								};
+								class Item4
+								{
+									dataType="Layer";
+									name="Beach Cover";
+									class Entities
+									{
+										items=11;
+										class Item0
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10890.719,11.444612,1636.8774};
+												angles[]={6.2103162,0,0.017997233};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7291;
+											type="Land_SharpStones_erosion";
+											atlOffset=-2.5749207e-005;
+										};
+										class Item1
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10925.091,-2.7070313,1606.5116};
+												angles[]={0.49219933,4.6101522,6.1721811};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7289;
+											type="Land_SharpRock_wallH";
+											atlOffset=-20.522631;
+										};
+										class Item2
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10893.645,10.856023,1628.7534};
+												angles[]={6.1845088,0,0.017997233};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7290;
+											type="Land_SharpStone_01";
+											atlOffset=-0.35617924;
+										};
+										class Item3
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10811.404,5.9747343,1622.9122};
+												angles[]={6.244206,0,0.092731461};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7294;
+											type="Land_SharpStone_02";
+											atlOffset=-9.393692e-005;
+										};
+										class Item4
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10778.507,4.799705,1655.4125};
+												angles[]={6.144114,5.237545,0.96202487};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7295;
+											type="Land_SharpStone_02";
+											atlOffset=-0.11486101;
+										};
+										class Item5
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10780.934,4.9508667,1655.4641};
+												angles[]={6.2718172,5.9164796,0.12424836};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7296;
+											type="Land_SharpStone_02";
+											atlOffset=0.058257103;
+										};
+										class Item6
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10817.172,5.4273481,1619.5862};
+												angles[]={6.229239,0,0.092731461};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7293;
+											type="Land_SharpRock_apart";
+											atlOffset=-3.2938056;
+										};
+										class Item7
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10780,4.2106113,1652.0741};
+												angles[]={6.228241,0,0.022996427};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7297;
+											type="Land_SharpStones_erosion";
+											atlOffset=-0.22323895;
+										};
+										class Item8
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10785.906,4.5880332,1653.6488};
+												angles[]={6.228241,0,0.022996427};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7298;
+											type="Land_Small_Stone_01_F";
+											atlOffset=-1.7166138e-005;
+										};
+										class Item9
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10822.028,-1.8128204,1657.0707};
+												angles[]={5.6914382,2.129848,0.52283871};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7299;
+											type="Land_SharpRock_wallH";
+											atlOffset=-19.389828;
+										};
+										class Item10
+										{
+											dataType="Object";
+											class PositionInfo
+											{
+												position[]={10910.052,12.275784,1707.7689};
+												angles[]={6.1884713,1.7360063e-007,5.5306239};
+											};
+											side="Empty";
+											flags=4;
+											class Attributes
+											{
+											};
+											id=7300;
+											type="Land_SharpRock_spike";
+											atlOffset=-12.621488;
+										};
+									};
+									id=7292;
+									atlOffset=-10.649528;
+								};
 							};
 							id=804;
-							atlOffset=-1.7459221;
+							atlOffset=-23.559566;
 						};
 						class Item1
 						{
@@ -27025,7 +27273,7 @@ class Mission
 						};
 					};
 					id=803;
-					atlOffset=-2.8434715;
+					atlOffset=-16.891136;
 				};
 				class Item1
 				{
@@ -36255,7 +36503,7 @@ class Mission
 				};
 			};
 			id=802;
-			atlOffset=180.93942;
+			atlOffset=178.28006;
 		};
 		class Item9
 		{
@@ -36608,7 +36856,7 @@ class Mission
 			colorName="ColorEAST";
 			a=178.08517;
 			b=177.87469;
-			angle=173.70734;
+			angle=173.70732;
 			id=4559;
 			atlOffset=0.49217892;
 		};
@@ -36699,7 +36947,7 @@ class Mission
 			name="Arsenals";
 			class Entities
 			{
-				items=3;
+				items=5;
 				class Item0
 				{
 					dataType="Object";
@@ -36842,9 +37090,105 @@ class Mission
 						nAttributes=2;
 					};
 				};
+				class Item3
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={12602.968,2.3766503,473.14975};
+						angles[]={6.2826972,1.5583203,-0};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						dynamicSimulation=1;
+					};
+					id=7302;
+					type="B_supplyCrate_F";
+					atlOffset=7.891655e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+				class Item4
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={15729.55,251.35234,4322.2959};
+						angles[]={6.2222557,2.9126055,6.1904559};
+					};
+					side="Empty";
+					flags=4;
+					class Attributes
+					{
+						name="KOR_brienz_arsenal";
+					};
+					id=7304;
+					type="B_supplyCrate_F";
+					atlOffset=1.5258789e-005;
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ammoBox";
+							expression="[_this,_value] call bis_fnc_initAmmoBox;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="allowDamage";
+							expression="_this allowdamage _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="BOOL";
+									value=0;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
 			};
 			id=4579;
-			atlOffset=98.779991;
+			atlOffset=217.79736;
 		};
 		class Item33
 		{
@@ -36943,12 +37287,11 @@ class Mission
 						{
 							class primaryWeapon
 							{
-								name="CUP_srifle_M107_Base";
-								optics="rhsusf_acc_nxs_5522x56_md";
+								name="CUP_arifle_G36KA3_hex";
 								class primaryMuzzleMag
 								{
-									name="CUP_10Rnd_127x99_M107";
-									ammoLeft=10;
+									name="CUP_30Rnd_556x45_G36_hex";
+									ammoLeft=30;
 								};
 							};
 							class uniform
@@ -36960,9 +37303,9 @@ class Mission
 									items=1;
 									class Item0
 									{
-										name="CUP_10Rnd_127x99_M107";
-										count=2;
-										ammoLeft=10;
+										name="CUP_30Rnd_556x45_G36_hex";
+										count=3;
+										ammoLeft=30;
 									};
 								};
 							};
@@ -37363,6 +37706,39 @@ class Mission
 			id=4835;
 			type="rhsusf_mkvsoc";
 			atlOffset=88.558998;
+		};
+		class Item41
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={12608.603,1.2596103,466.043};
+				angles[]={0,3.2446544,0};
+			};
+			side="Empty";
+			class Attributes
+			{
+			};
+			id=7301;
+			type="B_SDV_01_F";
+			atlOffset=89.385002;
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

@@ -203,8 +203,6 @@ _this spawn KOR_fnc_handle_insertToGoldwil;
 
 
 
-// cover at goldwil beach
-// how to give players the arsenal at brienz
 // figure out better strategy for group changer and player groups being added
 // supports
 // music
