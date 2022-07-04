@@ -200,3 +200,12 @@ KOR_fnc_brienzMainCombat = {
 
 [] call KOR_fnc_setupGoldwilBoatLaunch;
 _this spawn KOR_fnc_handle_insertToGoldwil;
+
+
+
+// extraction from brienz
+// music
+// cover at goldwil beach
+// supports
+// how to give players the arsenal at brienz
+// figure out better strategy for group changer and player groups being added

@@ -248,7 +248,7 @@ class KISKA_cfgTasks
         parentTask = "KOR_brienz";
 
         title = "Board The Helicopter";
-        description = "The helicopter will transport your team and the Zodiac to near Goldwil";
+        description = "The helicopter will transport your team to a sniper position overlooking Brienz";
 
         type = TASK_TYPE_GET_IN;
 
@@ -259,6 +259,47 @@ class KISKA_cfgTasks
 
         visibleIn3D = ON;
         compiledDestination = "KOR_insertHeli_brienz";
+        priority = 100;
+    };
+
+    /* ----------------------------------------------------------------------------
+        Brienz extract
+    ---------------------------------------------------------------------------- */
+    class KOR_brienz_extract
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Extract From The Sniper Position";
+        description = "";
+
+        type = TASK_TYPE_TAKEOFF;
+
+        defaultState = "AUTOASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = OFF;
+        destination[] = {};
+
+        priority = 100;
+    };
+    class KOR_brienz_extract_boardTheHeli
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Board The Helicopter";
+        description = "";
+
+        type = TASK_TYPE_GET_IN;
+
+        defaultState = "ASSIGNED";
+
+        notifyOnCreate = ON;
+        notifyOnComplete = ON;
+
+        visibleIn3D = ON;
+        compiledDestination = "KOR_brienz_extracHeli";
         priority = 100;
     };
 };
