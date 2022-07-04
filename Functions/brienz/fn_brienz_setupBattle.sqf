@@ -19,13 +19,47 @@ private _infantryGroupMovePositions = ["Brienz Marine Infantry Move Positions"] 
 
     private _attackPos = _infantryGroupMovePositions select _forEachIndex;
     [_infantryGroup, _attackPos, -1, "aware"] call KISKA_fnc_attack;
-    // handle allowDamae on these guys
+
+    (units _infantryGroup) apply {
+        [_x, false] remoteExec ["allowDamage",0,true];
+    };
 } forEach _infantryGroupSpawns;
 
 /* ----------------------------------------------------------------------------
     Marine Armor
 ---------------------------------------------------------------------------- */
+/* private _armorSpawns = ["Brienz Marine Armor Spawns"] call KISKA_fnc_getMissionlayerObjects;
+private _armorAttackPositions = ["Brienz Marine Armor Attack Positions"] call KISKA_fnc_getMissionlayerObjects;
 
+{
+    private _vehicleInfo = [
+        _x,
+        -1,
+        "CUP_B_LAV25_USMC",
+        BLUFOR,
+        true,
+        [
+            MARINE_ARMOR_CREW_UNIT_CLASS,
+            MARINE_ARMOR_CREW_UNIT_CLASS,
+            MARINE_ARMOR_CREW_UNIT_CLASS
+        ]
+    ] call KISKA_fnc_spawnVehicle;
+
+    private _group = _vehicleInfo select 2;
+    [
+        _group,
+        _armorAttackPositions select _forEachIndex
+    ] call KISKA_fnc_attack;
+
+    private _crew = _vehicleInfo select 1;
+    _crew apply {
+        [_x, false] remoteExec ["allowDamage",0,true];
+    };
+
+    private _vehicle = _vehicleInfo select 0;
+    [_vehicle, false] remoteExec ["allowDamage",0,true];
+
+} forEach _armorSpawns; */
 
 /* ----------------------------------------------------------------------------
     Infantry to kill
@@ -36,7 +70,7 @@ private _unitsToKill = KISKA_bases_brienzMain get "unit list";
 KISKA_multiKillEventMap_brienzInfantry = [
     _unitsToKill,
     {
-        private _armorKilled = KISKA_multiKillEventMap_brienzArmor getOrDefault ["thresholdMet",false]
+        private _armorKilled = KISKA_multiKillEventMap_brienzArmor getOrDefault ["thresholdMet",false];
         if (_armorKilled) then {
             ["KOR_brienz_supportMarines"] call KISKA_fnc_endTask;
         };
@@ -51,6 +85,9 @@ KISKA_multiKillEventMap_brienzInfantry = [
         if (_percentageKilled >= 0.25) then {
             [] call KOR_fnc_brienz_reinforcements;
         };
+        if (_percentageKilled >= 0.45) then {
+            [] call KOR_fnc_brienz_reinforcements;
+        };
     }
 ] call KISKA_fnc_setupMultiKillEvent;
 
@@ -62,7 +99,7 @@ private _vehiclesToKill = KISKA_bases_brienzMain get "land vehicles";
 KISKA_multiKillEventMap_brienzArmor = [
     _vehiclesToKill,
     {
-        private _infantryKilled = KISKA_multiKillEventMap_brienzInfantry getOrDefault ["thresholdMet",false]
+        private _infantryKilled = KISKA_multiKillEventMap_brienzInfantry getOrDefault ["thresholdMet",false];
         if (_infantryKilled) then {
             ["KOR_brienz_supportMarines"] call KISKA_fnc_endTask;
         };

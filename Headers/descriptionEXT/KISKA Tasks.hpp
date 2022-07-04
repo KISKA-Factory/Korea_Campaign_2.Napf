@@ -201,6 +201,25 @@ class KISKA_cfgTasks
 
         onComplete = "[] call KOR_fnc_brienz_securedOutpost";
     };
+    class KOR_brienz_supportMarines
+    {
+        parentTask = "KOR_brienz";
+
+        title = "Support Marine Assault";
+        description = "Provide sniper fire to Marines assualting Brienz.";
+
+        type = TASK_TYPE_RIFLE;
+        defaultState = "ASSIGNED";
+
+        notifyOnComplete = ON;
+        notifyOnCreate = ON;
+
+        destination[] = {14574.6,2946.8,0};
+        visibleIn3D = ON;
+        priority = 200;
+
+        onComplete = "";
+    };
 
     /* ----------------------------------------------------------------------------
         Brienz insert

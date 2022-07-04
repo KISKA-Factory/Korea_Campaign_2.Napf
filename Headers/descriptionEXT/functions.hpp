@@ -5,6 +5,8 @@ class KOR
 		file = "functions\brienz";
 		class brienzInsert
 		{};
+		class brienz_setupBattle
+		{};
 	};
 	class goldwil
 	{

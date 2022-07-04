@@ -108,5 +108,7 @@
     "rhsusf_usmc_recon_marpat_wd_rifleman_at_lite",\
     "rhsusf_usmc_recon_marpat_wd_teamleader_lite"
 
+#define MARINE_ARMOR_CREW_UNIT_CLASS "rhsusf_usmc_marpat_wd_crewman"
+
 #define MARINE_COBRA_HELI_CLASS "RHS_AH1Z_wd"
 #define MARINE_CH53_HELI_CLASS "rhsusf_CH53E_USMC_GAU21"
