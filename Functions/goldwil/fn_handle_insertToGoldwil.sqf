@@ -31,6 +31,7 @@ private _vehicleInfo = [
     ]
 ] call KISKA_fnc_spawnVehicle;
 KOR_insertHeli_goldwil = _vehicleInfo select 0;
+KOR_insertHeli_goldwil flyInHeight 30;
 
 private _heliGroup = _vehicleInfo select 2;
 [_heliGroup,true] call KISKA_fnc_ACEX_setHCTransfer;
@@ -80,6 +81,8 @@ waituntil {
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
     ["KOR_goldwil_insert"] call KISKA_fnc_endTask;
+
+    [] remoteExec ["KISKA_fnc_addProximityPlayerAction", (call CBA_fnc_players)];
 
     _this spawn {
         params ["_heli"];

@@ -59,8 +59,8 @@ class KISKA_basicSupport_baseClass
 
 class KOR_120HE : KISKA_ARTY_120_templateClass
 {
-    text = "120mm Shipbourne Artillery - HE";
-    roundCount = 4;
+    text = "120mm Shipbourne Artillery - 5 HE";
+    roundCount = 6;
     ammoTypes[] = {
         AMMO_120_HE_ID
     };

@@ -10,8 +10,8 @@ if (!canSuspend) exitWith {
 
 ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
 
-["Group",500] remoteExecCall ["setDynamicSimulationDistance",0,true];
-["Vehicle",500] remoteExecCall ["setDynamicSimulationDistance",0,true];
+["Group",300] remoteExecCall ["setDynamicSimulationDistance",0,true];
+["Vehicle",300] remoteExecCall ["setDynamicSimulationDistance",0,true];
 
 
 /* ----------------------------------------------------------------------------

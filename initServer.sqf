@@ -90,7 +90,6 @@ KOR_response = {
 
         [_x, group _closestEnemy, 15, {
             params ["_stalkerGroup"];
-            hint ("reset group: " + (str _stalkedGroup));
             _stalkerGroup setVariable ["KISKA_bases_responseMissionPriority", nil];
             _stalkerGroup setVariable ["KISKA_bases_respondingToId", nil];
         }] spawn KISKA_fnc_stalk;
@@ -100,7 +99,7 @@ KOR_response = {
 
         if !(localNamespace getVariable ["KOR_goldwilMusicPlayed",false]) then {
             localNamespace setVariable ["KOR_goldwilMusicPlayed",true];
-            ["CCM_AV_HomeworldCollapse"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+            ["CCM_AV_HomeworldCollapse",0,true,0.75] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
         };
     };
 };
@@ -113,6 +112,11 @@ KOR_response = {
     ["Goldwil Boats"] call KISKA_fnc_getMissionLayerObjects,
     {
         ["KOR_goldwil_destroyBoats"] call KISKA_fnc_endTask;
+
+        private _areaClear = "KOR_goldwil_clear" call BIS_fnc_taskCompleted;
+        if (_areaClear) then {
+            [] spawn KOR_fnc_brienzInsert;
+        };
     }
 ] call KISKA_fnc_setupMultiKillEvent;
 
@@ -121,6 +125,11 @@ KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
     KOR_base_goldWil get "unit list",
     {
         ["KOR_goldwil_clear"] call KISKA_fnc_endTask;
+
+        private _boatsDestroyed = "KOR_goldwil_destroyBoats" call BIS_fnc_taskCompleted;
+        if (_boatsDestroyed) then {
+            [] spawn KOR_fnc_brienzInsert;
+        };
     },
     1,
     {},
@@ -206,6 +215,8 @@ KOR_fnc_brienzMainCombat = {
 [] spawn KOR_fnc_setupGoldwilBoatLaunch;
 [] spawn KOR_fnc_handle_insertToGoldwil;
 
+["KOR_120HE"] call KISKA_fnc_supportManager_addToPool_global;
+["KOR_120HE"] call KISKA_fnc_supportManager_addToPool_global;
 
 [
     -1,
@@ -243,3 +254,7 @@ KOR_fnc_brienzMainCombat = {
 
 // supports
 // weather / time
+// add proximity action to boat
+// adjust spawn positions for men on boat to allow movement
+// change goldwil insert music (too middle eastern music atm)
+// test brienz outpost insert to make sure main is not triggered
