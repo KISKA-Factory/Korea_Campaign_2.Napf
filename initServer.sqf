@@ -79,7 +79,7 @@ KOR_response = {
         private _groupUnits = units _x;
         // reset infantry positions
         _groupUnits apply {
-            _x setVariable ["KISKA_bases_stopAmbientAnim",true];
+            _x call BIS_fnc_ambientAnim__terminate;
             [_x,"AUTO"] remoteExec ["setUnitPos",_x];
         };
         // in case unit was told to stop with doStop
@@ -254,7 +254,5 @@ KOR_fnc_brienzMainCombat = {
 
 // supports
 // weather / time
-// add proximity action to boat
-// adjust spawn positions for men on boat to allow movement
 // change goldwil insert music (too middle eastern music atm)
 // test brienz outpost insert to make sure main is not triggered

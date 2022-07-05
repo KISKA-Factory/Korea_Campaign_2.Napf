@@ -104,7 +104,7 @@ private _afterDropCode = {
 
     _this spawn {
         params ["_heli"];
-
+        
         private _pilot = currentPilot _heli;
         [[_pilot],(getPosATL KOR_deletePos_2)] remoteExec ["doMove",_pilot];
 

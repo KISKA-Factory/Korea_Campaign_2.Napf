@@ -82,7 +82,7 @@ waituntil {
 private _afterDropCode = {
     ["KOR_goldwil_insert"] call KISKA_fnc_endTask;
 
-    [] remoteExec ["KISKA_fnc_addProximityPlayerAction", (call CBA_fnc_players)];
+    [] remoteExec ["KOR_fnc_effect_addGetUpBoatAction",0,true];
 
     _this spawn {
         params ["_heli"];

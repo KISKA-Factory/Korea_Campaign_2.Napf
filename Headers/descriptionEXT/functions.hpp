@@ -34,4 +34,13 @@ class KOR
 		class setupClassEventHandler
 		{};
 	};
+	class effects
+	{
+		file = "functions\Effects";
+		class effect_addGetUpBoatAction
+		{};
+		class effect_removeGetUpBoatAction
+		{};
+	};
+
 };
