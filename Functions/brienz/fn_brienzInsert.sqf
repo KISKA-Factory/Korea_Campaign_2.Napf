@@ -104,7 +104,7 @@ private _afterDropCode = {
 
     _this spawn {
         params ["_heli"];
-        
+
         private _pilot = currentPilot _heli;
         [[_pilot],(getPosATL KOR_deletePos_2)] remoteExec ["doMove",_pilot];
 
@@ -128,4 +128,4 @@ private _afterDropCode = {
     28
 ] call KISKA_fnc_ACE_fastRope;
 
-["CCM_AKMV18_Melancholia"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+[KOR_musicMap get "Brienz Insert"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];

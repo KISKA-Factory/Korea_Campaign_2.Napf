@@ -64,7 +64,7 @@ waituntil {
     )
 };
 
-["CCM_SQ_UniversalPain"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
+[KOR_musicMap "Goldwil Insert"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_goldwil_insert_boardTheHeli"] call KISKA_fnc_endTask;
 
 // keep players from exiting while heli takes off

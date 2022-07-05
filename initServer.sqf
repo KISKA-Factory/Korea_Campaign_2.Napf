@@ -1,6 +1,7 @@
 KOR_testing = !(["ACE_main"] call KISKA_fnc_isPatchLoaded);
 
 [] call KOR_fnc_setupClassEventHandler;
+[] call KOR_fnc_setupMusicMap;
 
 private _arsenals = ["Arsenals"] call KISKA_fnc_getMissionLayerObjects;
 [_arsenals] call KISKA_fnc_addArsenal;
@@ -99,7 +100,7 @@ KOR_response = {
 
         if !(localNamespace getVariable ["KOR_goldwilMusicPlayed",false]) then {
             localNamespace setVariable ["KOR_goldwilMusicPlayed",true];
-            ["CCM_AV_HomeworldCollapse",0,true,0.75] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+            [KOR_musicMap get "Goldwil Combat",0,true,0.75] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
         };
     };
 };
@@ -218,6 +219,7 @@ KOR_fnc_brienzMainCombat = {
 ["KOR_120HE"] call KISKA_fnc_supportManager_addToPool_global;
 ["KOR_120HE"] call KISKA_fnc_supportManager_addToPool_global;
 
+
 [
     -1,
     [
@@ -254,5 +256,4 @@ KOR_fnc_brienzMainCombat = {
 
 // supports
 // weather / time
-// change goldwil insert music (too middle eastern music atm)
 // test brienz outpost insert to make sure main is not triggered

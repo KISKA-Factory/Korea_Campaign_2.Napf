@@ -41,6 +41,8 @@ class KOR
 		{};
 		class effect_removeGetUpBoatAction
 		{};
+		class effect_setupMusicMap
+		{};
 	};
 
 };

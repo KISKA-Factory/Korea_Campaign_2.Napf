@@ -32,7 +32,7 @@ waitUntil {
     CONDITION_PLAYER_WITHIN_RADIUS_2D(KOR_goldwilMarker,1100);
 };
 
-["CCM_SQ_MyGreatPlanet"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
+[KOR_musicMap get "Approaching Goldwil"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 [] call KOR_fnc_cleanupBoatLaunch;
 
 
