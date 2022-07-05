@@ -116,7 +116,7 @@ KOR_response = {
     }
 ] call KISKA_fnc_setupMultiKillEvent;
 
-/* KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
+KOR_base_goldWil = ["Goldwil"] call KISKA_fnc_bases_createFromConfig;
 [
     KOR_base_goldWil get "unit list",
     {
@@ -125,18 +125,18 @@ KOR_response = {
     1,
     {},
     true
-] call KISKA_fnc_setupMultiKillEvent; */
+] call KISKA_fnc_setupMultiKillEvent;
 
 
-/* KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
+KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig;
 [
     KOR_base_brienzOutpost get "unit list",
     {
         ["KOR_brienz_secureCommStation"] call KISKA_fnc_endTask;
     }
-] call KISKA_fnc_setupMultiKillEvent; */
+] call KISKA_fnc_setupMultiKillEvent;
 
-/* KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig; */
+KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
 KOR_fnc_brienzMainCombat = {
     private _playerAlreadyRevealed = missionNamespace getVariable ["KOR_brienzPlayerRevealed",false];
     if (_playerAlreadyRevealed) exitWith {};
@@ -199,8 +199,8 @@ KOR_fnc_brienzMainCombat = {
 };
 
 
-/* ["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig; */
-/* ["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig; */
+["freedomFlightDeck"] call KISKA_fnc_bases_createFromConfig;
+["lhdFlightDeck"] call KISKA_fnc_bases_createFromConfig;
 
 
 [] call KOR_fnc_setupGoldwilBoatLaunch;
@@ -243,5 +243,3 @@ _this spawn KOR_fnc_handle_insertToGoldwil;
 
 // supports
 // weather / time
-// track for air assault
-// track for extraction

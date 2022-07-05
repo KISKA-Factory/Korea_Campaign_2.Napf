@@ -72,7 +72,7 @@ waituntil {
 };
 
 
-[""] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
+["CCM_KE_Soli"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_brienz_extract_boardTheHeli"] call KISKA_fnc_endTask;
 
 

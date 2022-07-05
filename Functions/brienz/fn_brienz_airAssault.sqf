@@ -111,4 +111,6 @@ private _landingPositions = ["Brienz Air Assult LZs"] call KISKA_fnc_getMissionl
 } forEach _spawnPositions;
 
 
+["CCM_AV_ColdWaters"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+
 nil
