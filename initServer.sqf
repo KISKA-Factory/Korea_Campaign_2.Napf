@@ -97,6 +97,11 @@ KOR_response = {
 
         _x setVariable ["KISKA_bases_responseMissionPriority",_priority];
         _x setVariable ["KISKA_bases_respondingToId", _groupReinforceId];
+
+        if !(localNamespace getVariable ["KOR_goldwilMusicPlayed",false]) then {
+            localNamespace setVariable ["KOR_goldwilMusicPlayed",true];
+            ["CCM_AV_HomeworldCollapse"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+        };
     };
 };
 
@@ -202,7 +207,41 @@ KOR_fnc_brienzMainCombat = {
 _this spawn KOR_fnc_handle_insertToGoldwil;
 
 
+[
+    -1,
+    [
+        "CCM_AM_againstGhost",
+        "CCM_AM_hardDay",
+        "CCM_AM_hope",
+        "CCM_AM_iWillNotReturn",
+        "CCM_GERN_gloom",
+        "CCM_AV_Uncertainty",
+        "CCM_AM_youPromise",
+        "CCM_HF_adrift",
+        "CCM_HF_surrounded",
+        "CCM_HF_theWayOutLonging",
+        "CCM_HINT_covid1084",
+        "CCM_KE_Somnolence",
+        "CCM_KE_TakeALookAroundYou",
+        "CCM_KE_Laburnum",
+        "CCM_KE_Thunderstorm",
+        "CCM_KE_Downpour",
+        "CCM_KE_Shinedown",
+        "CCM_KE_Imminence",
+        "CCM_KE_CurtainsAreAlwaysDrawn",
+        "CCM_SAV_pastTense",
+        "CCM_sb_midvinter",
+        "CCM_sb_aurora",
+        "CCM_sb_celestial",
+        "CCM_SQ_SunrisePiano",
+        "CCM_SQ_DramaticPiano",
+        "CCM_SQ_MyLand",
+        "CCM_sb_mercuryrising"
+    ],
+    [10,20,30]
+] spawn KISKA_fnc_randomMusic;
 
-// figure out better strategy for group changer and player groups being added
 // supports
-// music
+// weather / time
+// track for air assault
+// track for extraction

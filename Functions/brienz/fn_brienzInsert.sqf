@@ -10,6 +10,10 @@ if (!canSuspend) exitWith {
 
 ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
 
+["Group",500] remoteExecCall ["setDynamicSimulationDistance",0,true];
+["Vehicle",500] remoteExecCall ["setDynamicSimulationDistance",0,true];
+
+
 /* ----------------------------------------------------------------------------
     Setup helicopter & crew
 ---------------------------------------------------------------------------- */
@@ -75,7 +79,6 @@ waituntil {
     [_x, false] remoteExecCall ["allowDamage",_x];
 };
 
-[""] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_brienz_insert_boardTheHeli"] call KISKA_fnc_endTask;
 
 // keep players from exiting while heli takes off
@@ -103,11 +106,11 @@ private _afterDropCode = {
         params ["_heli"];
 
         private _pilot = currentPilot _heli;
-        [[_pilot],(getPosATL KOR_deletePos)] remoteExec ["doMove",_pilot];
+        [[_pilot],(getPosATL KOR_deletePos_2)] remoteExec ["doMove",_pilot];
 
         waitUntil {
             sleep 2;
-            _heli distance2D KOR_deletePos <= 400;
+            _heli distance2D KOR_deletePos_2 <= 400;
         };
 
         deleteVehicleCrew _heli;
@@ -124,3 +127,5 @@ private _afterDropCode = {
     _afterDropCode,
     28
 ] call KISKA_fnc_ACE_fastRope;
+
+["CCM_AKMV18_Melancholia"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];

@@ -2,6 +2,9 @@
 
 scriptName "KOR_fnc_brienz_setupBattle";
 
+["Group",1000] remoteExecCall ["setDynamicSimulationDistance",0,true];
+["Vehicle",1000] remoteExecCall ["setDynamicSimulationDistance",0,true];
+
 /* ----------------------------------------------------------------------------
     Marine Infantry
 ---------------------------------------------------------------------------- */
@@ -82,7 +85,7 @@ KISKA_multiKillEventMap_brienzInfantry = [
         private _total = _eventMap getOrDefault ["total", 1];
         private _killed = _eventMap getOrDefault ["killed", 1];
         private _percentageKilled = _killed / _total;
-        
+
         private _reinforceMentsCalled = missionNamespace getVariable ["KOR_brienz_reinforcementsCalled",false];
         if (_percentageKilled >= 0.45 AND (!_reinforceMentsCalled)) then {
             [] call KOR_fnc_brienz_reinforcements;

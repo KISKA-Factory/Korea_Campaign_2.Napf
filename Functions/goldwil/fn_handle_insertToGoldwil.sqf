@@ -63,7 +63,7 @@ waituntil {
     )
 };
 
-["CCM_AM_acquaintance"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
+["CCM_SQ_UniversalPain"] remoteExec ["KISKA_fnc_playMusic", [0,-2] select isDedicated];
 ["KOR_goldwil_insert_boardTheHeli"] call KISKA_fnc_endTask;
 
 // keep players from exiting while heli takes off
@@ -80,11 +80,6 @@ waituntil {
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
     ["KOR_goldwil_insert"] call KISKA_fnc_endTask;
-
-    /* ["Artillery support now available"] remoteExec ["KISKA_fnc_dataLinkMsg",0];
-    ["KOR_120Guided"] call KISKA_fnc_supportManager_addToPool_global;
-    ["KOR_230HE"] call KISKA_fnc_supportManager_addToPool_global;
-    ["KOR_arsenalDrop"] call KISKA_fnc_supportManager_addToPool_global; */
 
     _this spawn {
         params ["_heli"];
