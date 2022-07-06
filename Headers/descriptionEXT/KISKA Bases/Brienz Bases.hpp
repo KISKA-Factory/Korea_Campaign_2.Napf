@@ -15,7 +15,7 @@ class BrienzOutpost
             numberOfUnits = 10;
             unitsPerGroup = 2;
 
-            canPath = ON;
+            canPath = OFF;
             dynamicSim = ON;
         };
         class transmitterBuilding_2 : transmitterBuilding_1

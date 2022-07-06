@@ -27,6 +27,21 @@ _swccSpawns apply {
 };
 
 
+
+private _hiddenBox = "B_supplyCrate_F" createVehicle [0,0,0];
+[_hiddenBox,false] remoteExec ["allowDamage",0,true];
+// delete all inventory
+clearItemCargoGlobal _hiddenBox;
+clearBackpackCargoGlobal _hiddenBox;
+clearWeaponCargoGlobal _hiddenBox;
+clearMagazineCargoGlobal _hiddenBox;
+[_hiddenBox] remoteExecCall ["hideObjectGlobal",2];
+// storage box needs to be within 5m of player when using GEAR action command
+_hiddenBox attachTo [KOR_goldwil_insertSub,[0,0,0]];
+missionNamespace setVariable ["KOR_hiddenSubBox",_hiddenBox,true];
+
+
+
 waitUntil {
     sleep 5;
     CONDITION_PLAYER_WITHIN_RADIUS_2D(KOR_goldwilMarker,1100);

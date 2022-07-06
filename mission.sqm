@@ -16,18 +16,18 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2982;
+		nextID=3168;
 	};
 	class Camera
 	{
-		pos[]={12613.071,4.0250311,461.61829};
-		dir[]={-0.54718316,-0.40364924,0.73327553};
-		up[]={-0.24141093,0.91491032,0.32351214};
-		aside[]={0.8014698,-2.7219357e-007,0.59807187};
+		pos[]={11042.953,83.517227,2078.7939};
+		dir[]={0.74309975,-0.47666416,-0.4696953};
+		up[]={0.40292731,0.87908101,-0.25468034};
+		aside[]={-0.53429836,-4.4556509e-007,-0.84530604};
 	};
 };
 binarizationWanted=0;
-sourceName="korea_campaign_2";
+sourceName="Korea_Campaign_2";
 addons[]=
 {
 	"Desert",
@@ -37664,18 +37664,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12603.021,1.7502397,467.74142};
-				angles[]={5.9520774,0.013859419,0};
+				position[]={12612.161,1.0557649,466.66};
+				angles[]={0,0.013859419,0};
 			};
 			side="Empty";
-			flags=4;
 			class Attributes
 			{
 				name="KOR_goldwil_insertBoat";
 			};
 			id=4812;
 			type="B_Boat_Transport_01_F";
-			atlOffset=0.13162267;
+			atlOffset=89.812233;
 			class CustomAttributes
 			{
 				class Attribute0
@@ -37729,16 +37728,17 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={12608.603,1.2596103,466.043};
-				angles[]={0,3.2446544,0};
+				position[]={12602.504,1.2516071,465.37601};
+				angles[]={0,4.7455325,0};
 			};
 			side="Empty";
 			class Attributes
 			{
+				name="KOR_goldwil_insertSub";
 			};
 			id=7301;
 			type="B_SDV_01_F";
-			atlOffset=89.385002;
+			atlOffset=0.35801268;
 			class CustomAttributes
 			{
 				class Attribute0

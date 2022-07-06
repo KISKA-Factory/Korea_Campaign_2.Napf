@@ -100,7 +100,7 @@ KOR_response = {
 
         if !(localNamespace getVariable ["KOR_goldwilMusicPlayed",false]) then {
             localNamespace setVariable ["KOR_goldwilMusicPlayed",true];
-            [KOR_musicMap get "Goldwil Combat",0,true,0.75] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+            [KOR_musicMap get "Goldwil Combat",0,true,0.5] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
         };
     };
 };
