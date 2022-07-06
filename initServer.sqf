@@ -256,4 +256,3 @@ KOR_fnc_brienzMainCombat = {
 
 // supports
 // weather / time
-// test brienz outpost insert to make sure main is not triggered
