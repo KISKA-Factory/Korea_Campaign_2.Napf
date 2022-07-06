@@ -8,7 +8,7 @@ if (!canSuspend) exitWith {
     _this spawn KOR_fnc_brienzInsert;
 };
 
-["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
+["KOR_brienz"] call KISKA_fnc_createTaskFromConfig;
 
 ["Group",300] remoteExecCall ["setDynamicSimulationDistance",0,true];
 ["Vehicle",300] remoteExecCall ["setDynamicSimulationDistance",0,true];
@@ -130,4 +130,4 @@ private _afterDropCode = {
     28
 ] call KISKA_fnc_ACE_fastRope;
 
-[KOR_musicMap get "Brienz Insert"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
+[KOR_musicMap get "Brienz Insert", 0, true, 0.6] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];

@@ -218,7 +218,7 @@ class KISKA_cfgTasks
         visibleIn3D = ON;
         priority = 200;
 
-        onComplete = "";
+        onComplete = "[] spawn KOR_fnc_brienz_extraction";
     };
 
     /* ----------------------------------------------------------------------------

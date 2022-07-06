@@ -86,6 +86,7 @@ waituntil {
 };
 
 private _pilot = currentPilot _heli;
+_pilot setBehaviour "CARELESS"
 [[_pilot],(getPosATL KOR_goldwilInsertHeliSpawn)] remoteExec ["doMove",_pilot];
 
 [] spawn {

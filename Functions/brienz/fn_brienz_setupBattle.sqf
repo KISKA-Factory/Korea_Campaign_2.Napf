@@ -69,7 +69,7 @@ private _armorAttackPositions = ["Brienz Marine Armor Attack Positions"] call KI
 ---------------------------------------------------------------------------- */
 ["KOR_brienz_supportMarines"] call KISKA_fnc_createTaskFromConfig;
 
-private _unitsToKill = KISKA_bases_brienzMain get "unit list";
+private _unitsToKill = KOR_base_brienzMain get "unit list";
 KISKA_multiKillEventMap_brienzInfantry = [
     _unitsToKill,
     {
@@ -102,7 +102,7 @@ KISKA_multiKillEventMap_brienzInfantry = [
 /* ----------------------------------------------------------------------------
     Armor to kill
 ---------------------------------------------------------------------------- */
-private _vehiclesToKill = KISKA_bases_brienzMain get "land vehicles";
+private _vehiclesToKill = KOR_base_brienzMain get "land vehicles";
 KISKA_multiKillEventMap_brienzArmor = [
     _vehiclesToKill,
     {

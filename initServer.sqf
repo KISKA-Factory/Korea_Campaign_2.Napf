@@ -146,14 +146,14 @@ KOR_base_brienzOutpost = ["BrienzOutpost"] call KISKA_fnc_bases_createFromConfig
     }
 ] call KISKA_fnc_setupMultiKillEvent;
 
-KISKA_bases_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
+KOR_base_brienzMain = ["BrienzMain"] call KISKA_fnc_bases_createFromConfig;
 KOR_fnc_brienzMainCombat = {
     private _playerAlreadyRevealed = missionNamespace getVariable ["KOR_brienzPlayerRevealed",false];
     if (_playerAlreadyRevealed) exitWith {};
 
     params ["_group"];
 
-    private _groupList = KISKA_bases_brienzMain get "group list";
+    private _groupList = KOR_base_brienzMain get "group list";
     _groupList apply {
         _x setCombatMode "RED";
         _x setBehaviour "AWARE";
@@ -256,3 +256,10 @@ KOR_fnc_brienzMainCombat = {
 
 // supports
 // weather / time
+// markers
+// music for sniper spot (nightfall)
+// cut down on enemies slightly in snipepr spot
+// more time between calling for arsenal and assault beginning
+// update datalink with message about arsenal on roof
+// add CAS supports for sniper spot
+// lower far right barrier
