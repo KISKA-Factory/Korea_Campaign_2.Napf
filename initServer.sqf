@@ -1,7 +1,7 @@
 KOR_testing = !(["ACE_main"] call KISKA_fnc_isPatchLoaded);
 
 [] call KOR_fnc_setupClassEventHandler;
-[] call KOR_fnc_setupMusicMap;
+[] call KOR_fnc_effect_setupMusicMap;
 
 private _arsenals = ["Arsenals"] call KISKA_fnc_getMissionLayerObjects;
 [_arsenals] call KISKA_fnc_addArsenal;
