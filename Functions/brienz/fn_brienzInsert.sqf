@@ -39,7 +39,7 @@ KOR_insertHeli_brienz = _vehicleInfo select 0;
 
 private _heliGroup = _vehicleInfo select 2;
 [_heliGroup,true] call KISKA_fnc_ACEX_setHCTransfer;
-_heliGroup setBehaviour "SAFE";
+_heliGroup setBehaviour "CARELESS";
 _heliGroup setCombatMode "BLUE";
 
 [KOR_insertHeli_brienz, false] remoteExec ["allowDamage", 0, true];
@@ -94,10 +94,6 @@ waituntil {
     Drop off players
 ---------------------------------------------------------------------------- */
 private _afterDropCode = {
-    (call CBA_fnc_players) apply {
-        [_x, false] remoteExecCall ["setCaptive",_x];
-        [_x, true] remoteExecCall ["allowDamage",_x];
-    };
 
     ["KOR_brienz_insert"] call KISKA_fnc_endTask;
     ["KOR_brienz_secureCommStation"] call KISKA_fnc_createTaskFromConfig;
@@ -107,6 +103,12 @@ private _afterDropCode = {
 
         private _pilot = currentPilot _heli;
         [[_pilot],(getPosATL KOR_deletePos_2)] remoteExec ["doMove",_pilot];
+
+        sleep 5;
+        (call CBA_fnc_players) apply {
+            [_x, false] remoteExecCall ["setCaptive",_x];
+            [_x, true] remoteExecCall ["allowDamage",_x];
+        };
 
         waitUntil {
             sleep 2;
