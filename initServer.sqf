@@ -256,5 +256,4 @@ KOR_fnc_brienzMainCombat = {
 
 // weather / time
 // markers
-// cut down on enemies slightly in sniper spot
 // lower far right barrier
