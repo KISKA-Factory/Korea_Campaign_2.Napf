@@ -253,7 +253,3 @@ KOR_fnc_brienzMainCombat = {
     ],
     [10,20,30]
 ] spawn KISKA_fnc_randomMusic;
-
-// weather / time
-// markers
-// lower far right barrier
