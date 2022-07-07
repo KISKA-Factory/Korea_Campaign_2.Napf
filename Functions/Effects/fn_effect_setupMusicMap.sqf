@@ -6,7 +6,8 @@ KOR_musicMap = createHashMapFromArray [
     ["Brienz Insert","CCM_AKMV18_Melancholia"],
     ["Goldwil Insert","CCM_sb_mercuryrising"],
     ["Approaching Goldwil","CCM_KE_DarkAlleys"],
-    ["Goldwil Combat","CCM_AV_HomeworldCollapse"]
+    ["Goldwil Combat","CCM_AV_HomeworldCollapse"],
+    ["Sniper Position","CCM_sb_nightfall"]
 ];
 
 KOR_musicMap

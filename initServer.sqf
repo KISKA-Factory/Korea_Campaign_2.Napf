@@ -254,12 +254,7 @@ KOR_fnc_brienzMainCombat = {
     [10,20,30]
 ] spawn KISKA_fnc_randomMusic;
 
-// supports
 // weather / time
 // markers
-// music for sniper spot (nightfall)
-// cut down on enemies slightly in snipepr spot
-// more time between calling for arsenal and assault beginning
-// update datalink with message about arsenal on roof
-// add CAS supports for sniper spot
+// cut down on enemies slightly in sniper spot
 // lower far right barrier

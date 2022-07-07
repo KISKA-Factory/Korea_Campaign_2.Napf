@@ -1,6 +1,7 @@
 #include "..\..\Headers\Unit Classes.hpp"
 
 scriptName "KOR_fnc_brienz_setupBattle";
+[KOR_musicMap get "Sniper Position"] remoteExec ["KISKA_fnc_playMusic",[0,-2] select isDedicated];
 
 ["Group",1000] remoteExecCall ["setDynamicSimulationDistance",0,true];
 ["Vehicle",1000] remoteExecCall ["setDynamicSimulationDistance",0,true];

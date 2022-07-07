@@ -12,7 +12,7 @@ class BrienzOutpost
         class transmitterBuilding_1
         {
             positions = "Transmitter Building Floor 1 Spawns";
-            numberOfUnits = 10;
+            numberOfUnits = 8;
             unitsPerGroup = 2;
 
             canPath = OFF;
@@ -30,7 +30,7 @@ class BrienzOutpost
         class transmitterOutside
         {
             positions = "Transmitter Outpost Spawns";
-            numberOfUnits = 20;
+            numberOfUnits = 15;
             unitsPerGroup = 5;
 
             canPath = ON;
@@ -71,7 +71,7 @@ class BrienzMain
         class group_1
         {
             positions = "Brienz Infantry Main 1";
-            numberOfUnits = 8;
+            numberOfUnits = 6;
             unitsPerGroup = -1;
 
             canPath = OFF;
